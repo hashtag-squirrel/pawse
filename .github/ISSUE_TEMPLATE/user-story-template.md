@@ -7,17 +7,11 @@ assignees: hashtag-squirrel
 
 ---
 
-As a 
+**Epic:**
 
-**role**
+**Description:**
+As a **role** I want to **capability** so that **benefit**
 
-I want to
-
-**capability**
-
-so that 
-
-**benefit**
-
-
-Acceptance Criteria:
+**Acceptance Criteria:**
+- [ ]
+- [ ]
