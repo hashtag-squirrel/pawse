@@ -40,15 +40,15 @@
 ### Strategy & Scope: User Stories
 
 - As a user, I want to see a navigation menu so that I can easily navigate to the desired content
-- As a user, I want to have an intuitive flow of the site so that I can find the desired content without issues
 - As a user, I want to see all menu options of the cafe so that I can make an informed decision if I want to visit 
 - As a user, I want to see the cats living in the cafe so that I can already familiarize myself with them before my visit
 - As a user, I want to see whether there are already people interested in the cats so that I can choose one accordingly
 - As a user, I want to be able to register to the site so that I get access functionality for authenticated users on the site
 - As a user, I want to be able to login so I can access my account
+- As a user, I want to have easy access to social media accounts of the cafe so that I can engage with the owners and other customers
   
 - As an authenticated user, I want to be able to log out of my account so that my account is secure from other users on the same device
-- As an authenticated user, I want to be able to delete my account
+- As an authenticated user, I want to be able to delete my account so that I can forget about the page
 - As an authenticated user, I want to be able to voice my interest in one of the cats so that I can adopt it
 - As an authenticated user, I want to be able to edit my interest in one of the cats 
 - As an authenticated user, I want to be able to delete my interest in one of the cats
@@ -65,6 +65,11 @@
 
 - As an authenticated user/site admin I want to see feedback from my actions so that I know my action was successful
 - As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong
+
+- As a site owner, I want the site to be visually pleasing so that users like to come back/share it
+
+
+
 
 
 <!-- Add table, User Stories mapped to Epics -->
@@ -103,6 +108,21 @@
 ### Existing Features
 
 <!-- Add features including screenshots -->
+All user features:
+- Home Page
+- Navigation 
+- Footer
+- Menu
+- Cats
+
+Authenticated user features:
+- Login/Registration
+- Add/Edit/Delete interest in cat
+- My Account page
+
+Site Admin features:
+- Add/Edit/Delete Menu items/sections
+- Add/Edit/Delete Cats
 
 ### Future Features
 
