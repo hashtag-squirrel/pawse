@@ -109,11 +109,13 @@
 
 <!-- Add features including screenshots -->
 All user features:
-- Home Page
 - Navigation 
 - Footer
-- Menu
-- Cats
+- Pages:
+  - Home Page
+  - Menu 
+  - Cats - Overview
+  - Cats - Detail
 
 Authenticated user features:
 - Login/Registration
