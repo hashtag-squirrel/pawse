@@ -78,17 +78,55 @@
 
 ### Structure: Site flow
 
-<!-- Add flow chart for site flow -->
+The website consists of four main pages that can be accessed via the nav bar. 
+
+Additional functionalities can be accessed from the nav bar or as subpages, depending on whether a user is signed in or not and depending on the user role. 
+
+This sitemap chart shows the high-level flow of the site: 
+
+![Sitemap](static/docs/pawse-sitemap.png)
 
 ### Skeleton: Wireframes
 
-<!-- Separate by authenticated/unauthenticated user -->
+The wireframes for the different pages can be divided into unauthenticated users, authenticated users and site admins.
 
-<!-- Add wireframes mobile -->
+1. Home
 
-<!-- Add wireframes tablet -->
+| **Page Version**                  | **Mobile**              | **Desktop**                   |
+|-----------------------------------|-------------------------|-------------------------------|
+| Unauthenticated                   | ![Home Mobile](static/docs/mobile-u-landing.png) | ![Home Desktop](static/docs/desktop-u-landing.png) |
+| Unauthenticated - nav expanded | ![Home Nav Expanded Mobile](static/docs/mobile-u-landing-nav-expanded.png) | ![Home Nav Expanded Desktop](static/docs/desktop-u-landing-nav-expanded.png)  |
+| Authenticated                     | Same as unauthenticated | ![Home A Desktop](static/docs/desktop-a-landing.png) |
+| Authenticated - nav expanded   | ![Home A Nav Expanded Mobile](static/docs/mobile-a-landing-nav-expanded.png) | Same as Unauthenticated with nav expanded, but with Authenticated nav bar options |
+| Site Admin                        | Same version as authenticated | Same version as authenticated |
 
-<!-- Add wireframes desktop -->
+2. Menu
+
+| **Page Version**       | **Mobile**              | **Desktop**             |
+|------------------------|-------------------------|-------------------------|
+| Unauthenticated        | ![Menu Mobile](static/docs/mobile-u-menu-list.png) | ![Menu Desktop](static/docs/desktop-u-menu-list.png) |
+| Authenticated          | Same as unauthenticated | Same as unauthenticated |
+| Site Admin             | N/A                     | ![Menu S Desktop](static/docs/desktop-s-menu-list.png) |
+| Site Admin - Add/Edit Menu Item     | N/A                     | ![Add Menu Item Desktop](static/docs/desktop-s-add-edit-menu-item.png) |
+| Site Admin - Add/Edit Menu Category | N/A                     | ![Add Category Desktop](static/docs/desktop-s-add-menu-category.png) |
+
+3. Cats
+
+| **Page Version**               | **Mobile** | **Desktop** |
+|--------------------------------|------------|-------------|
+| Unauthenticated                | ![Cats Mobile](static/docs/mobile-u-cats.png) | ![Cats Desktop](static/docs/desktop-u-cats.png) |
+| Authenticated                  | ![Cats A Mobile](static/docs/mobile-a-cats.png) | ![Cats A Desktop](static/docs/desktop-a-cats.png) |
+| Authenticated - added interest | ![Cats added interest Mobile](static/docs/mobile-a-cats-added-interest.png) | ![Cats added interest Desktop](static/docs/desktop-a-cats-added-interest.png) |
+| Site Admin                     | N/A        | ![Cats S Desktop](static/docs/desktop-s-cats.png) |
+| Site Admin - Add/Edit Cat                   | N/A        | ![Add Cat Desktop](static/docs/desktop-s-add-edit-cat.png) |
+
+4. Sign Up/Sign In/My Account
+
+| **Page Version**               | **Mobile** | **Desktop** |
+|--------------------------------|------------|-------------|
+| Unauthenticated - Sign Up                | ![Sign Up Mobile](static/docs/mobile-u-sign-up.png) | ![Sign Up Desktop](static/docs/desktop-u-sign-up.png) |
+| Unauthenticated - Sign In                | ![Sign In Mobile](static/docs/mobile-u-sign-in.png) | ![Sign In Desktop](static/docs/desktop-u-sign-in.png) |
+| Authenticated - My Account             | ![My Account Mobile](static/docs/mobile-a-my-account.png) | ![My Account Desktop](static/docs/desktop-a-my-account.png) |
 
 ### Surface: Visual Design
 
