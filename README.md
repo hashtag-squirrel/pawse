@@ -2,13 +2,15 @@
 
 <!-- Image with responsive screenshot here -->
 
-<!-- write introduction here -->
+Pawse is a full-stack website project for a cat cafe. 
+
+It is a remake of the HTML & CSS only website ["In the Meowment"](https://hashtag-squirrel.github.io/in-the-meowment/), which was made earlier this year, as a showcase of my development as a coder. 
+
+This project was made from scratch, only taking the idea of the previous cat cafe website and fleshing it out from the ground up. 
 
 <!-- Link to live site -->
 
 ## Table of Contents
-
-<!-- TOC goes here -->
 
 - [Pawse - Introduction](#pawse---introduction)
   - [Table of Contents](#table-of-contents)
@@ -17,6 +19,10 @@
     - [Structure: Site flow](#structure-site-flow)
     - [Skeleton: Wireframes](#skeleton-wireframes)
     - [Surface: Visual Design](#surface-visual-design)
+      - [Colors](#colors)
+      - [Fonts](#fonts)
+      - [Logo](#logo)
+  - [Database Design](#database-design)
   - [Agile Development](#agile-development)
   - [Features](#features)
     - [Existing Features](#existing-features)
@@ -39,40 +45,33 @@
 
 ### Strategy & Scope: User Stories
 
-- As a user, I want to see a navigation menu so that I can easily navigate to the desired content
-- As a user, I want to see all menu options of the cafe so that I can make an informed decision if I want to visit 
-- As a user, I want to see the cats living in the cafe so that I can already familiarize myself with them before my visit
-- As a user, I want to see whether there are already people interested in the cats so that I can choose one accordingly
-- As a user, I want to be able to register to the site so that I get access functionality for authenticated users on the site
-- As a user, I want to be able to login so I can access my account
-- As a user, I want to have easy access to social media accounts of the cafe so that I can engage with the owners and other customers
-  
-- As an authenticated user, I want to be able to log out of my account so that my account is secure from other users on the same device
-- As an authenticated user, I want to be able to delete my account so that I can forget about the page
-- As an authenticated user, I want to be able to voice my interest in one of the cats so that I can adopt it
-- As an authenticated user, I want to be able to edit my interest in one of the cats 
-- As an authenticated user, I want to be able to delete my interest in one of the cats
+| **Epic**                               | **User Story**                                                                                                                        |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Unauthenticated User Features          | As a user, I want to see a navigation menu so that I can easily navigate to the desired content                                       |
+|                                        | As a user, I want to see all menu options of the cafe so that I can make an informed decision if I want to visit                      |
+|                                        | As a user, I want to see the cats living in the cafe so that I can already familiarize myself with them before my visit               |
+|                                        | As a user, I want to see whether there are already people interested in the cats so that I can choose one accordingly                 |
+|                                        | As a user, I want to be able to register to the site so that I get access functionality for authenticated users on the site           |
+|                                        | As a user, I want to be able to login so I can access my account                                                                      |
+|                                        | As a user, I want to have easy access to social media accounts of the cafe so that I can engage with the owners and other customers   |
+| Authenticated User Features            | As an authenticated user, I want to be able to log out of my account so that my account is secure from other users on the same device |
+|                                        | As an authenticated user, I want to be able to delete my account so that I can forget about the page                                  |
+|                                        | As an authenticated user, I want to be able to voice my interest in one of the cats so that I can adopt it                            |
+|                                        | As an authenticated user, I want to be able to edit my interest in one of the cats                                                    |
+|                                        | As an authenticated user, I want to be able to delete my interest in one of the cats                                                  |
+| Site Admin Features                    | As a site admin, I want to be able to log in to my admin account so that I can make changes to the content on the site                |
+|                                        | As a site admin, I want to be able to adjust the menu from the frontend so that it is always up to date                               |
+|                                        | - As a site admin, I want to be able to add new menu items from the frontend                                                          |
+|                                        | - As a site admin, I want to be able to edit menu items from the frontend                                                             |
+|                                        | - As a site admin, I want to be able to delete menu items from the frontend                                                           |
+|                                        | As a site admin, I want to be able to adjust the kittens from the frontend so that customers always see the current kittens           |
+|                                        | - As a site admin, I want to be able to add new cats from the frontend                                                                |
+|                                        | - As a site admin, I want to be able to edit cats from the frontend                                                                   |
+|                                        | - As a site admin, I want to be able to delete cats from the frontend                                                                 |
+| Authenticated User/Site Admin Features | As an authenticated user/site admin I want to see feedback from my actions so that I know my action was successful                    |
+|                                        | As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong        |
+| Site Owner Features                    | As a site owner, I want the site to be visually pleasing so that users like to come back/share it                                     |
 
-- As a site admin, I want to be able to log in to my admin account so that I can make changes to the content on the site
-- As a site admin, I want to be able to adjust the menu from the frontend so that it is always up to date
-  - As a site admin, I want to be able to add new menu items from the frontend
-  - As a site admin, I want to be able to edit menu items from the frontend
-  - As a site admin, I want to be able to delete menu items from the frontend
-- As a site admin, I want to be able to adjust the kittens from the frontend so that customers always see the current kittens
-  - As a site admin, I want to be able to add new cats from the frontend
-  - As a site admin, I want to be able to edit cats from the frontend
-  - As a site admin, I want to be able to delete cats from the frontend
-
-- As an authenticated user/site admin I want to see feedback from my actions so that I know my action was successful
-- As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong
-
-- As a site owner, I want the site to be visually pleasing so that users like to come back/share it
-
-
-
-
-
-<!-- Add table, User Stories mapped to Epics -->
 
 <!-- Add section about target audience -->
 
@@ -130,11 +129,30 @@ The wireframes for the different pages can be divided into unauthenticated users
 
 ### Surface: Visual Design
 
-<!-- Add color scheme -->
+#### Colors
 
-<!-- Add Fonts -->
+I was not fully satisfied with the color scheme used on my first cat cafe project, I felt the colors were a little stuffy, so I wanted to have a fresh look for this project.
 
-<!-- Add image strategy? -->
+My goal was to have a more elegant, more minimalistic look for the page, light and inviting, but without looking boring. 
+
+#### Fonts
+
+#### Logo
+
+The logo design is based on the name of the cafe, which is a pun made of paws of a cat and pause like a break. Therefore, the logo is a stylized cat paw with a pause sign on the big circle. 
+
+
+## Database Design
+
+The Entity Relationship Diagram shows the basic structure of the database.
+
+![ERD](static/docs/pawse-erd.png)
+
+The User model is provided by Django and extended with a UserRole model. 
+
+The MenuCategory and MenuItem models are utilized to display the menu list divided by category and holds information about the price of the different items as well. 
+
+The Cat model is used to store all relevant information about the cats of the cafe, including the name, date of birth, description and an image of the cat. Additionally, the Application model holds information about any application sent in by the users for any cats. 
 
 
 ## Agile Development
@@ -192,7 +210,7 @@ Site Admin features:
 
 ### Media
 
-<!-- add media links -->
+[Base for the logo:](https://pixabay.com/vectors/paw-print-dog-cat-animal-pet-5892565/)
 
 ### Code
 
