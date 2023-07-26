@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 
+/* colors */
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #197278;
+    --secondary-color-dark: #283D3B;
+    --highlight-color: #C44536;
+    --highlight-color-dark: #772E25; 
+}
+
 body {
-    background-color: white;
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    color: black;
+    background-color: var(--secondary-color);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color-dark)
 }
