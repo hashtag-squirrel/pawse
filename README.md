@@ -133,9 +133,19 @@ The wireframes for the different pages can be divided into unauthenticated users
 
 I was not fully satisfied with the color scheme used on my first cat cafe project, I felt the colors were a little stuffy, so I wanted to have a fresh look for this project.
 
-My goal was to have a more elegant, more minimalistic look for the page, light and inviting, but without looking boring. 
+My goal was to have a more elegant and modern look for the page, light and inviting with colors that pop. 
+
+I tried different color palettes using [Coolors](https://coolors.co/) and ended up with this palette using red and teal tones with a simple white background:
+
+![Color Scheme](static/docs/pawse-colors.png)
 
 #### Fonts
+
+Building on the idea of a minimalistic modern look and feel of the site, I wanted simple fonts for the site. 
+
+For any flowing text, I picked [Karla](https://fonts.google.com/specimen/Karla?preview.text=Welcome%20to%20our%20cafe&preview.text_type=custom&category=Sans+Serif), an elegant but playful sans serif font. 
+
+For the headings on the page, I picked [Raleway](https://fonts.google.com/specimen/Raleway?preview.text=Pawse&preview.text_type=custom&category=Sans+Serif), which is also very minimalistic and sans serif. 
 
 #### Logo
 
