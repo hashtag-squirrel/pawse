@@ -48,6 +48,7 @@ This project was made from scratch, only taking the idea of the previous cat caf
 | **Epic**                               | **User Story**                                                                                                                        |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Unauthenticated User Features          | As a user, I want to see a navigation menu so that I can easily navigate to the desired content                                       |
+|                                        | As a user, I want to see an inviting landing page so that I know what the page is about and what I can do                             |
 |                                        | As a user, I want to see all menu options of the cafe so that I can make an informed decision if I want to visit                      |
 |                                        | As a user, I want to see the cats living in the cafe so that I can already familiarize myself with them before my visit               |
 |                                        | As a user, I want to see whether there are already people interested in the cats so that I can choose one accordingly                 |
@@ -135,7 +136,7 @@ I was not fully satisfied with the color scheme used on my first cat cafe projec
 
 My goal was to have a more elegant and modern look for the page, light and inviting with colors that pop. 
 
-I tried different color palettes using [Coolors](https://coolors.co/) and ended up with this palette using red and teal tones with a simple white background:
+I tried different color palettes using [Coolors](https://coolors.co/283d3b-197278-ffffff-c44536-772e25) and ended up with this palette using red and teal tones with a simple white background:
 
 ![Color Scheme](static/docs/pawse-colors.png)
 
