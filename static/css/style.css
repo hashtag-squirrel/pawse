@@ -14,9 +14,9 @@ body {
     background-color: var(--primary-color);
 }
 
-.navbar {
+.navbar-light {
     color: black;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .navbar a {
@@ -24,6 +24,14 @@ body {
     color: inherit;
 }
 
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--secondary-color-dark) !important
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: var(--secondary-color) !important
+}
+
 .navbar a:hover {
-    color: var(--secondary-color-dark)
+    color: var(--secondary-color) !important
 }
