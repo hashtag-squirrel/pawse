@@ -225,4 +225,4 @@ Site Admin features:
 
 ### Code
 
-<!-- Add tutorial links/links to code used -->
+[Sticky Footer Tutorial](https://devpractical.com/bootstrap-sticky-footer/)

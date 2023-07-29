@@ -20,18 +20,32 @@ body {
 }
 
 .navbar a {
-    text-decoration: none;
     color: inherit;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--secondary-color-dark) !important
+    color: var(--secondary-color-dark) !important;
 }
 
 .navbar-light .navbar-nav .nav-link.active:hover {
-    color: var(--secondary-color) !important
+    color: var(--secondary-color) !important;
 }
 
 .navbar a:hover {
-    color: var(--secondary-color) !important
+    color: var(--secondary-color) !important;
 }
+
+/* Body */
+
+body {
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+.navbar a {
+    text-decoration: none;
+}
+
+
+/* Footer */
