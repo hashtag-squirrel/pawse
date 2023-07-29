@@ -2,6 +2,7 @@
 
 /* colors */
 
+/* main color definition */
 :root {
     --primary-color: #ffffff;
     --secondary-color: #197278;
@@ -10,6 +11,26 @@
     --highlight-color-dark: #772E25; 
 }
 
+/* text colors */
+
+.text-dark {
+    color: var(--secondary-color-dark) !important;    
+}
+
+.text-light {
+    color: var(--highlight-color) !important;
+}
+
+.text-danger {
+    color: var(--highlight-color-dark) !important;
+}
+
+.text-success {
+    color: var(--secondary-color) !important;
+}
+
+/* background colors */
+
 body {
     background-color: var(--primary-color);
 }
@@ -17,10 +38,6 @@ body {
 .navbar-light {
     color: black;
     background-color: var(--primary-color);
-}
-
-.navbar a {
-    color: inherit;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -32,6 +49,10 @@ body {
 }
 
 .navbar a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.footer a:hover {
     color: var(--secondary-color) !important;
 }
 
