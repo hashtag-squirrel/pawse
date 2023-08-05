@@ -4,6 +4,9 @@
 
 {% block content %}
 
-Hello cats!
+{% for cat in cats %}
+{{ cat.name }}
+
+{% endfor %}
 
 {% endblock %}
