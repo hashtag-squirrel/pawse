@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'pages',
     'menu',
+    'cats',
 ]
 
 MIDDLEWARE = [
