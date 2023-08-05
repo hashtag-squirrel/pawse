@@ -5,33 +5,30 @@
 {% block content %}
 
 <section class="container">
-    <div class="row">
+    <div class="row text-center">
         <h1>Menu</h1>
     </div>
-    <div class="row">
-        
-        <div class="accordion accordion-flush" id="menu">
-            {% for category in object_list %}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  {{ category.name }}
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <ul>
-                        {% for item in menu_items %}
-                        {% if item.category == category %}
-                        <li>{{ item.name }}</li>
-                        {% endif %}
-                        {% endfor %}
-                    </ul>
+    <div class="flex-row d-flex justify-content-evenly">
+        {% for category in object_list %}
+            <div class="card w-100 m-4">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ category.name }}</h5>
+                    <p class="card-text">
+                        <ul class="p-1">
+                            {% for item in menu_items %}
+                                {% if item.category == category %}
+                                    <li class="d-flex justify-content-between">
+                                        <p class="">{{ item.name }}</p>
+                                        <p class="">{{ item.price }}</p>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </p>
                 </div>
-              </div>
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
+
     </div>
 </section>
 
