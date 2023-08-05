@@ -229,3 +229,4 @@ Text content for the landing page in the About section and Testimonials section 
 ### Code
 
 [Sticky Footer Tutorial](https://devpractical.com/bootstrap-sticky-footer/)
+[Calculation for age from days](https://www.codesansar.com/python-programming-examples/convert-number-days-years-months-days.htm)
