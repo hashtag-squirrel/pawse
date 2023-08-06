@@ -20,6 +20,7 @@ class MenuItem(models.Model):
     category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE,
                                  related_name='category')
     price = models.DecimalField(max_digits=5, decimal_places=2)
+    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ['-name']

@@ -225,8 +225,15 @@ Text content for the landing page in the About section and Testimonials section 
 
 [Base for the logo:](https://pixabay.com/vectors/paw-print-dog-cat-animal-pet-5892565/)
 [Hero image on home page](https://pixabay.com/photos/cat-mammal-animal-cafe-pet-feline-8101641/)
+[Whiskers](https://www.pexels.com/photo/orange-cat-in-close-up-photography-9443839/)
+[Luna](https://www.pexels.com/photo/a-tuxedo-cat-on-a-hanging-wooden-bridge-7726104/)
+[Oliver](https://www.pexels.com/photo/brown-cat-lying-on-knitted-textile-952581/)
+[Amber](https://www.pexels.com/photo/close-up-photo-of-sitting-brown-tabby-cat-2373663/)
+[Mocha](https://www.pexels.com/photo/cute-cat-lying-on-sofa-4154508/)
+[Simba](https://www.pexels.com/photo/fluffy-ginger-cat-15511201/)
 
 ### Code
 
 [Sticky Footer Tutorial](https://devpractical.com/bootstrap-sticky-footer/)
+[How to add a second model in a view](https://www.appsloveworld.com/django/100/28/refer-to-multiple-models-in-view-template-in-django)
 [Calculation for age from days](https://www.codesansar.com/python-programming-examples/convert-number-days-years-months-days.htm)
