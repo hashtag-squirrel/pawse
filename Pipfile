@@ -10,6 +10,8 @@ dj-database-url = "==0.5.0"
 psycopg2 = "*"
 dj3-cloudinary-storage = "*"
 urllib3 = "==1.26.15"
+pillow = "*"
+django-allauth = "*"
 
 [dev-packages]
 

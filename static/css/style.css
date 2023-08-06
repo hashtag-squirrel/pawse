@@ -1,5 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 
-body {
-    background-color: white;
+/* colors */
+
+/* main color definition */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #197278;
+    --secondary-color-dark: #283D3B;
+    --highlight-color: #C44536;
+    --highlight-color-dark: #772E25; 
 }
+
+/* text colors */
+
+.text-dark {
+    color: var(--secondary-color-dark) !important;    
+}
+
+.text-light {
+    color: var(--primary-color) !important;
+}
+
+.text-danger {
+    color: var(--highlight-color-dark) !important;
+}
+
+.text-success {
+    color: var(--secondary-color) !important;
+}
+
+/* background colors */
+
+body {
+    background-color: var(--primary-color);
+}
+
+.navbar-light {
+    color: black;
+    background-color: var(--primary-color);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--secondary-color-dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: var(--secondary-color) !important;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.footer a:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Body */
+
+body {
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+.navbar a {
+    text-decoration: none;
+}
+
+
+/* Footer */

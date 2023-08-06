@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- <div class="container-fluid">
+    <div class="row d-flex justify-content-evenly">
+        {% for cat in object_list %}
+        <div class="container">
+            <img src="{{ cat.image.url }}" class="img-fluid w-25 rounded" alt="">
+        
+            {{ cat.name }}
+        </div>
+        
+        {% endfor %}
+    </div>
+</div> -->
+<div class="container-fluid w-50 mt-3 mb-3">
+    <div class="row">
+        <div class="col mx-auto">
+            <div id="catCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    {% for i in object_list %}
+                        {% if forloop.first %}
+                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
+                        {% else %}
+                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" aria-label="{{ forloop.counter }}"></button>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="carousel-inner">
+                    {% for cat in object_list %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active">
+                        {% else %}
+                            <div class="carousel-item">
+                        {% endif %}
+                            <div class="card">
+                                <img src="{{ cat.image.url }}" class="card-img-top" alt="{{ cat.name}}">
+                                <div class="card-body">
+                                    <h5>{{ cat.name }}</h5>
+                                    <h6>{{ cat.get_age }}</h6>
+                                    <p class="card-text mb-3">{{ cat.description }}</p>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    {% endfor %}
+                
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+        </div>
+    </div>
+</div>
+    
+
+{% endblock %}

@@ -1,7 +1,45 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
-Hello World
+<!-- Hero image section -->
+<section class="container-fluid">
+    <div class="row">
+        <div class="card text-bg-dark col p-0 d-flex id="hero-image">
+            <img class="img-fluid" src="{% static 'images/cat-on-bench.jpg' %}" alt="">
+            <div class="d-flex align-items-center card-img-overlay text-light bg-dark bg-gradient bg-opacity-50">
+                <div class="col align-self-center mx-auto text-center">
+                    <h1 class="card-title">Welcome to Pawse</h1>
+                    <p class="card-text">... the purrfect destination for cat lovers and coffee enthusiasts alike! Nestled in the heart of the city, Pawse is a charming cat cafe designed to provide a unique and relaxing experience. Immerse yourself in the company of our adorable and affectionate feline residents while savoring freshly brewed, ethically sourced coffee and delicious treats. Our cozy ambiance and friendly staff create a warm, welcoming atmosphere where you can unwind and enjoy the therapeutic presence of our delightful cats. Whether you're seeking a moment of tranquility or looking to make new furry friends, Pawse promises an unforgettable time filled with joy and happiness. Come paws-itively indulge your senses at Pawse!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Testimonials</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 mt-4 text-center">
+            <p>"What a delightful experience! As a cat lover, I couldn't resist visiting Pawse, and it exceeded all my expectations. The cats were so affectionate and playful, and the coffee was simply divine. It felt like a serene escape from the hustle and bustle of the city. I've already become a regular and can't wait to come back for more cuddles and coffee!"</p>
+            <p><em>Gloria</em></p>
+        </div>
+        <div class="col-4 text-center">
+            <p>"Pawse is a gem in the city! As a coffee enthusiast, I always look for unique cafes, and this one stood out. The coffee was top-notch, and the cat theme added an adorable touch. The staff was incredibly friendly, and the cats were so adorable and well-cared for. It's a fantastic place to unwind and relax. Highly recommended!"</p>
+            <p><em>Andy</em></p>
+        </div>
+        <div class="col-4 mt-4 text-center">
+            <p>"I'm not much of a cat person, but Pawse won me over! The cafe had a fantastic ambiance, and the cats added a unique charm to the whole experience. The baristas were friendly and made some of the best lattes I've ever had. Even if you're not a die-hard cat lover, Pawse is worth a visit for the fantastic coffee and the opportunity to experience something different."</p>
+            <p><em>Sarah</em></p>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
