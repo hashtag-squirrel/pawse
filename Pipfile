@@ -11,7 +11,6 @@ psycopg2 = "*"
 dj3-cloudinary-storage = "*"
 urllib3 = "==1.26.15"
 pillow = "*"
-django-heroku = "*"
 
 [dev-packages]
 
