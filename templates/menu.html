@@ -17,9 +17,21 @@
                         <ul class="p-1">
                             {% for item in menu_items %}
                                 {% if item.category == category %}
-                                    <li class="d-flex justify-content-between">
-                                        <p class="">{{ item.name }}</p>
-                                        <p class="">{{ item.price }}</p>
+                                    <li class="d-flex flex-column justify-content-between">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="col">
+                                                <p class="fw-bold text-uppercase">{{ item.name }}</p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="">{{ item.price }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col">
+                                                <p>{{ item.description}}</p>
+                                            </div>
+                                        </div>
+                                            
                                     </li>
                                 {% endif %}
                             {% endfor %}
