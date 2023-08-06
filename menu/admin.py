@@ -5,7 +5,7 @@ from .models import MenuItem, MenuCategory
 # Register your models here.
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price',)
+    list_display = ('name', 'category', 'price', 'description',)
 
 
 @admin.register(MenuCategory)
