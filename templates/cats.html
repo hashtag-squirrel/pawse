@@ -20,7 +20,7 @@
         <div class="col mx-auto">
             <div id="catCarousel" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">
-                    {% for i in object_list %}
+                    {% for i in cats %}
                         {% if forloop.first %}
                             <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
                         {% else %}
@@ -29,7 +29,7 @@
                     {% endfor %}
                 </div>
                 <div class="carousel-inner">
-                    {% for cat in object_list %}
+                    {% for cat in cats %}
                         {% if forloop.first %}
                             <div class="carousel-item active">
                         {% else %}

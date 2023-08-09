@@ -11,6 +11,6 @@ class MenuView(generic.ListView):
     template_name = 'menu.html'
 
     def get_context_data(self, **kwargs: Any):
-        ctx = super(MenuView, self).get_context_data(**kwargs)
-        ctx['menu_items'] = MenuItem.objects.all()
-        return ctx
+        context = super(MenuView, self).get_context_data(**kwargs)
+        context['menu_items'] = MenuItem.objects.all()
+        return context
