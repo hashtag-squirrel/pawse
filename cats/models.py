@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 
 
 class Cat(models.Model):
@@ -8,6 +9,10 @@ class Cat(models.Model):
     date_of_birth = models.DateField()
     description = models.TextField()
     image = models.ImageField()
+    applications = models.ManyToManyField(
+        User,
+        through='CatApplication',
+        blank=True)
 
     class Meta:
         ordering = ['-name']
@@ -31,3 +36,16 @@ class Cat(models.Model):
         days = (number_of_days - years * 365 - months*30)
 
         return f'{years} years, {months} months and {days} days old'
+
+    def number_of_applications(self):
+        return self.applications.count
+
+
+class CatApplication(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    application_text = models.TextField()
+
+    def __str__(self):
+        return f'{self.user} has sent an application for {self.cat}. It says: {self.application_text}'
