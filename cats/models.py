@@ -1,12 +1,14 @@
 from django.db import models
 import datetime
 from django.contrib.auth.models import User
+from autoslug import AutoSlugField
 
 
 class Cat(models.Model):
 
     name = models.CharField(max_length=50)
     date_of_birth = models.DateField()
+    slug = AutoSlugField(populate_from='name', unique_with='date_of_birth')
     description = models.TextField()
     image = models.ImageField()
     applications = models.ManyToManyField(
@@ -38,7 +40,7 @@ class Cat(models.Model):
         return f'{years} years, {months} months and {days} days old'
 
     def number_of_applications(self):
-        return self.applications.count
+        return self.applications.count()
 
 
 class CatApplication(models.Model):
