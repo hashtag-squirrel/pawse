@@ -48,4 +48,4 @@ class CatApplicationView(generic.CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(CatApplication, self).form_valid(form)
+        return super(CatApplicationView, self).form_valid(form)

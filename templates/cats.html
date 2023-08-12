@@ -17,9 +17,9 @@
         {% endfor %}
     </div>
 </div> -->
-<div class="container-fluid w-50 mt-3 mb-3">
+<div class="container-fluid mt-3 mb-3">
     <div class="row">
-        <div class="col mx-auto">
+        <div class="col col-sm-10 col-md-8 col-lg-6 mx-auto">
             <div id="catCarousel" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">
                     {% for i in cats %}
@@ -54,16 +54,16 @@
                                                     {% update_variable True as flag %}
                                                     {% else %}
                                                         {% if not flag and forloop.counter == applications|length %}
-                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
                                                 {% endwith %}
                                             {% else %}
-                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
                                             {% endif %}
                                         {% else %}
-                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -87,14 +87,26 @@
     </div>
 
     <div class="row">
-        <div class="col-6 mx-auto">
+        <div class="mx-auto">
             {% if user.is_authenticated %}
                 {% if applications %}
                 <h4 class="mt-4 text-center">Your applications</h4>
-                    <p>You have sent {{ applications | length }} applications:</p>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                     {% for application in applications %}
-                        <p>{{ application }}</p>
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-header">
+                            {{ application.cat }}
+                          </div>
+                        <div class="card-body">
+                          <p class="card-text">{{ application.application_text}}</p>
+                        </div>
+                      </div>
+                    </div>
                     {% endfor %}
+                  </div>
+
                 {% endif %}
             {% endif %}
         </div>
