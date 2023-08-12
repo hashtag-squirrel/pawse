@@ -6,10 +6,15 @@
 
 
 <form method="POST" enctype="multipart/form-data">
+
+    <h4 class="text-center">Application for {{ slug|title }}</h4>
  
     <!-- Security token -->
     {% csrf_token %}
  
+    <div class="container-fluid">
+        
+    </div>
     <!-- Using the formset -->
     {{ form.as_p }}
      
