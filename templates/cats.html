@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load cats_extras %}
+
 {% block content %}
 <!-- <div class="container-fluid">
     <div class="row d-flex justify-content-evenly">
@@ -42,15 +44,26 @@
                                     <h6>{{ cat.get_age }}</h6>
                                     <p class="card-text mb-3">{{ cat.description }}</p>
                                     <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
-                                    <div class="d-grid col-3 mx-auto pb-5">
+                                    <div class="d-grid col-4 mx-auto pb-5">
                                         {% if user.is_authenticated %}
-                                            {% if cat.applications.user == request.user.name %}
-                                                <p>{{ cat.applications}}</p>
+                                            {% if applications %}
+                                                {% with False as flag %}
+                                                {% for application in applications %}
+                                                    {% if application.cat == cat %}
+                                                    <button type="button" class="btn btn-primary shadow cat-btn" disabled>You have applied for this cat.</button>
+                                                    {% update_variable True as flag %}
+                                                    {% else %}
+                                                        {% if not flag and forloop.counter == applications|length %}
+                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% endwith %}
                                             {% else %}
-                                                <button type="button" class="btn btn-primary shadow"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
                                             {% endif %}
                                         {% else %}
-                                        <button type="button" class="btn btn-primary shadow"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
+                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' %}">Apply for {{ cat.name }} now!</a></button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -72,7 +85,20 @@
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% if user.is_authenticated %}
+                {% if applications %}
+                <h4 class="mt-4 text-center">Your applications</h4>
+                    <p>You have sent {{ applications | length }} applications:</p>
+                    {% for application in applications %}
+                        <p>{{ application }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
 </div>
-    
 
 {% endblock %}

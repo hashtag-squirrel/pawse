@@ -1,7 +1,7 @@
 from django.urls import path
-from cats.views import CatsView, CatApplication
+from cats.views import CatsView, CatApplicationView
 
 urlpatterns = [
     path('', CatsView.as_view(), name='cats'),
-    path('application/', CatApplication.as_view(), name='cat-application'),
+    path('application/', CatApplicationView.as_view(), name='cat-application'),
 ]

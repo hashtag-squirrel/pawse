@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse  # noqa
 from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
@@ -11,10 +11,11 @@ class CatsView(generic.ListView):
     context_object_name = 'cats'
     template_name = 'cats.html'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(CatsView, self).get_context_data(**kwargs)
-    #     context['applications'] = CatApplication.objects.all()
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super(CatsView, self).get_context_data(**kwargs)
+        context['applications'] = CatApplication.objects.filter(
+            user=self.request.user.id)
+        return context
 
     # def get(self, request, *args, **kwargs):
     #     queryset = Cat.objects.all()
@@ -34,7 +35,7 @@ class CatsView(generic.ListView):
 
 
 @method_decorator(login_required, name='dispatch')
-class CatApplication(generic.CreateView):
+class CatApplicationView(generic.CreateView):
 
     model = CatApplication
 

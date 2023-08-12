@@ -50,4 +50,4 @@ class CatApplication(models.Model):
     application_text = models.TextField()
 
     def __str__(self):
-        return f'{self.user} has sent an application for {self.cat}. It says: {self.application_text}'
+        return f'You have sent an application for {self.cat}. It says: "{self.application_text}"'
