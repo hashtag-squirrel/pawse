@@ -45,7 +45,7 @@ class CatApplicationView(generic.CreateView):
 
     def get_success_url(self):
         return reverse('cats')
-    
+
     def get_context_data(self, **kwargs):
         context = super(CatApplicationView, self).get_context_data(**kwargs)
         context['slug'] = self.kwargs['slug']
@@ -55,3 +55,20 @@ class CatApplicationView(generic.CreateView):
         form.instance.user = self.request.user
         form.instance.cat = Cat.objects.get(slug=self.kwargs['slug'])
         return super(CatApplicationView, self).form_valid(form)
+
+
+@method_decorator(login_required, name='dispatch')
+class CatApplicationEditView(generic.UpdateView):
+
+    model = CatApplication
+    context_object_name = 'application'
+    fields = ['application_text', 'cat']
+
+    template_name = 'cat-application-edit.html'
+
+    def get_success_url(self):
+        return reverse('cats')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CatApplicationEditView, self).form_valid(form)

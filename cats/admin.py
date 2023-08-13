@@ -6,9 +6,16 @@ from .models import Cat, CatApplication
 
 @admin.register(Cat)
 class CatAdmin(admin.ModelAdmin):
-    list_display = ('name', 'date_of_birth',  'slug', 'description', 'image',)
+    list_display = (
+        'pk',
+        'name',
+        'date_of_birth',
+        'slug',
+        'description',
+        'image',
+        )
 
 
 @admin.register(CatApplication)
 class CatApplicationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'cat', 'application_text',)
+    list_display = ('pk', 'user', 'cat', 'application_text',)
