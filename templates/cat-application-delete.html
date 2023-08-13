@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form method="post">{% csrf_token %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-center">
+    <p>Are you sure you want to delete your application for {{ application.cat }}?</p>
+    {{ form|crispy }}
+    <input type="submit" value="Confirm" class="mx-auto">
+</div>
+</div>
+</div>
+</form>
+
+
+{% endblock %}

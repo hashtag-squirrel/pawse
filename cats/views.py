@@ -72,3 +72,20 @@ class CatApplicationEditView(generic.UpdateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(CatApplicationEditView, self).form_valid(form)
+
+
+@method_decorator(login_required, name='dispatch')
+class CatApplicationDeleteView(generic.DeleteView):
+
+    model = CatApplication
+    context_object_name = 'application'
+    fields = ['application_text', 'cat']
+
+    template_name = 'cat-application-delete.html'
+
+    def get_success_url(self):
+        return reverse('cats')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CatApplicationDeleteView, self).form_valid(form)

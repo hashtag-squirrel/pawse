@@ -100,8 +100,15 @@
                             {{ application.cat }}
                           </div>
                         <div class="card-body">
-                          <p class="card-text">{{ application.application_text}}</p>
-                          <a class="btn btn-primary" href="{% url 'edit-application' application.pk %}">Edit</a>
+                            <div class="d-flex flex-row">
+                                <p class="card-text">{{ application.application_text}}</p>
+                            </div>
+                          
+                          <div class="d-flex flex-row justify-content-end">
+                            <a class="btn btn-primary btn-sm m-1" href="{% url 'edit-application' application.pk %}">Edit</a>
+                            <a class="btn btn-primary btn-sm m-1" href="{% url 'delete-application' application.pk %}">Delete</a>
+                          </div>
+                          
                         </div>
                       </div>
                     </div>
