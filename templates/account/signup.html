@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Register" %}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-4 mx-auto">
       <div class="card mx-auto">
         <div class="card-body">
@@ -14,11 +14,11 @@
           <h6 class="card-subtitle mb-2 text-muted">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</h6>
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button type="submit">{% trans "Register" %} &raquo;</button>
+            <button class="btn-primary" type="submit">{% trans "Register" %}</button>
           </form>
         </div>
       </div>

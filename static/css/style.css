@@ -66,6 +66,11 @@ body {
 
 body {
     margin-bottom: 30px;
+    background-attachment: fixed;
+}
+
+main {
+    background: 100vh;
 }
 
 a {
@@ -82,3 +87,6 @@ a {
 }
 
 /* Footer */
+ footer {
+    background: white;
+ }
