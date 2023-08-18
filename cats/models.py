@@ -1,13 +1,20 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
+from autoslug import AutoSlugField
 
 
 class Cat(models.Model):
 
     name = models.CharField(max_length=50)
     date_of_birth = models.DateField()
+    slug = AutoSlugField(populate_from='name', unique_with='date_of_birth')
     description = models.TextField()
     image = models.ImageField()
+    applications = models.ManyToManyField(
+        User,
+        through='CatApplication',
+        blank=True)
 
     class Meta:
         ordering = ['-name']
@@ -31,3 +38,16 @@ class Cat(models.Model):
         days = (number_of_days - years * 365 - months*30)
 
         return f'{years} years, {months} months and {days} days old'
+
+    def number_of_applications(self):
+        return self.applications.count()
+
+
+class CatApplication(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    application_text = models.TextField()
+
+    def __str__(self):
+        return f'You have sent an application for {self.cat}. It says: "{self.application_text}"'

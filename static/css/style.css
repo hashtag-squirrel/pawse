@@ -29,6 +29,12 @@
     color: var(--secondary-color) !important;
 }
 
+.btn-primary {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    border: none;
+}
+
 /* background colors */
 
 body {
@@ -60,13 +66,27 @@ body {
 
 body {
     margin-bottom: 30px;
+    background-attachment: fixed;
 }
 
-/* Header */
+main {
+    background: 100vh;
+}
 
-.navbar a {
+a {
     text-decoration: none;
+    color: inherit;
 }
 
+.btn:hover {
+    background-color: var(--highlight-color) !important;
+}
+
+.btn a:hover {
+    color: white !important;
+}
 
 /* Footer */
+ footer {
+    background: white;
+ }
