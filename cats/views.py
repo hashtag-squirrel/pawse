@@ -3,6 +3,7 @@ from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 class CatsView(generic.ListView):
@@ -54,6 +55,7 @@ class CatApplicationView(generic.CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.cat = Cat.objects.get(slug=self.kwargs['slug'])
+        messages.success(self.request, 'SUCCESS! Application added!')
         return super(CatApplicationView, self).form_valid(form)
 
 
@@ -71,6 +73,7 @@ class CatApplicationEditView(generic.UpdateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, 'SUCCESS! Application edited!')
         return super(CatApplicationEditView, self).form_valid(form)
 
 
@@ -84,8 +87,5 @@ class CatApplicationDeleteView(generic.DeleteView):
     template_name = 'cat-application-delete.html'
 
     def get_success_url(self):
+        messages.success(self.request, 'SUCCESS! Application deleted!')
         return reverse('cats')
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(CatApplicationDeleteView, self).form_valid(form)
