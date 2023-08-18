@@ -82,7 +82,6 @@ class CatApplicationDeleteView(generic.DeleteView):
 
     model = CatApplication
     context_object_name = 'application'
-    fields = ['application_text', 'cat']
 
     template_name = 'cat-application-delete.html'
 
