@@ -87,6 +87,28 @@ a {
 }
 
 /* Footer */
- footer {
+footer {
     background: white;
- }
+}
+
+/* Landing page hero section */
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-content {
+    height: 100%;
+    position: relative;
+    color: #fff;
+    background-color: rgba(40, 40, 40, 0.5);
+}
