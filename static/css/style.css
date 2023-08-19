@@ -14,7 +14,7 @@
 /* text colors */
 
 .text-dark {
-    color: var(--blue-color) !important;    
+    color: var(--secondary-color) !important;    
 }
 
 .text-light {
@@ -26,7 +26,7 @@
 }
 
 .text-success {
-    color: var(--secondary-color) !important;
+    color: var(--blue-color) !important;
 }
 
 .btn-primary {
@@ -42,24 +42,24 @@ body {
 }
 
 .navbar-light {
-    color: black;
+    color: var(--blue-color) !important;
     background-color: var(--primary-color);
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--secondary-color-dark) !important;
+    color: var(---blue-color) !important;
 }
 
 .navbar-light .navbar-nav .nav-link.active:hover {
-    color: var(--secondary-color) !important;
+    color: var(--highlight-color) !important;
 }
 
 .navbar a:hover {
-    color: var(--secondary-color) !important;
+    color: var(--highlight-color) !important;
 }
 
 .footer a:hover {
-    color: var(--secondary-color) !important;
+    color: var(--highlight-color) !important;
 }
 
 /* Body */
