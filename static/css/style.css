@@ -29,8 +29,8 @@
     color: var(--blue-color) !important;
 }
 
-.text-muted {
-    color: var(--grey-color) !important
+.text-secondary {
+    color: rgba(0, 0, 0, 0.5) !important
 }
 
 .btn-primary {
@@ -62,11 +62,7 @@ body {
     color: var(--highlight-color) !important;
 }
 
-.navbar a:hover {
-    color: var(--highlight-color) !important;
-}
-
-.footer a:hover {
+a:hover {
     color: var(--highlight-color) !important;
 }
 
