@@ -5,16 +5,16 @@
 /* main color definition */
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #197278;
-    --secondary-color-dark: #283D3B;
-    --highlight-color: #C44536;
-    --highlight-color-dark: #772E25; 
+    --secondary-color: #000000;
+    --blue-color: #14213D;
+    --highlight-color: #FCA311;
+    --grey-color: #E5E5E5; 
 }
 
 /* text colors */
 
 .text-dark {
-    color: var(--secondary-color-dark) !important;    
+    color: var(--blue-color) !important;    
 }
 
 .text-light {
@@ -22,7 +22,7 @@
 }
 
 .text-danger {
-    color: var(--highlight-color-dark) !important;
+    color: var(--highlight-color) !important;
 }
 
 .text-success {
@@ -30,8 +30,8 @@
 }
 
 .btn-primary {
-    background-color: var(--secondary-color) !important;
-    color: white !important;
+    background-color: var(--highlight-color) !important;
+    color: black !important;
     border: none;
 }
 
@@ -67,6 +67,7 @@ body {
 body {
     margin-bottom: 30px;
     background-attachment: fixed;
+    background-size: 70%;
 }
 
 main {
