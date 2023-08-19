@@ -6,7 +6,7 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #000000;
-    --blue-color: #14213D;
+    --blue-color: rgb(20, 33, 61);
     --highlight-color: #FCA311;
     --grey-color: #E5E5E5; 
 }
@@ -29,6 +29,10 @@
     color: var(--blue-color) !important;
 }
 
+.text-muted {
+    color: var(--grey-color) !important
+}
+
 .btn-primary {
     background-color: var(--highlight-color) !important;
     color: black !important;
@@ -36,6 +40,10 @@
 }
 
 /* background colors */
+
+.box-dark {
+    background-color: rgb(20, 33, 61, 0.75) !important;
+}
 
 body {
     background-color: var(--primary-color);
@@ -112,4 +120,16 @@ video {
     position: relative;
     color: #fff;
     background-color: rgba(40, 40, 40, 0.5);
+}
+
+/* Landing page testimonials section */
+
+.testimonial::before { 
+    font: var(--fa-font-solid);
+    font-size: 350%;
+    color: var(--highlight-color);
+    content: "\f10d";
+    position: absolute;
+    top: -30px;
+    left: -3%;
 }
