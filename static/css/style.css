@@ -66,6 +66,14 @@ a:hover {
     color: var(--highlight-color) !important;
 }
 
+#logo {
+    background-color: var(--highlight-color);
+}
+
+#logo:hover {
+    background-color: var(--blue-color);
+}
+
 /* Body */
 
 body {
@@ -84,7 +92,7 @@ a {
 }
 
 .btn:hover {
-    background-color: var(--highlight-color) !important;
+    color: white !important;
 }
 
 .btn a:hover {
@@ -132,3 +140,18 @@ video {
 
 
 /* Cats page carousel section */
+
+.card-img-wrap {
+    overflow: hidden;
+}
+
+
+@keyframes cat-zoom {
+    from {transform: scale(1);}
+    to {transform: scale(1.5);}
+}
+
+.cat-img {
+    animation: cat-zoom 20s forwards;
+}
+
