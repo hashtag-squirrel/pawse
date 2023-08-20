@@ -8,6 +8,7 @@
     --secondary-color: #000000;
     --blue-color: rgb(20, 33, 61);
     --highlight-color: #FCA311;
+    --highlight-color-dark: color-mix(in hsl, var(--highlight-color) 80%, black 20%);
     --grey-color: #E5E5E5; 
 }
 
@@ -23,6 +24,10 @@
 
 .text-danger {
     color: var(--highlight-color) !important;
+}
+
+.text-primary {
+    color: var(--highlight-color-dark) !important;
 }
 
 .text-success {
@@ -138,6 +143,12 @@ video {
     left: -3%;
 }
 
+/* Menu page */
+
+.menu-item-name {
+    text-shadow: 5px 5px 7px var(--highlight-color);
+}
+
 
 /* Cats page carousel section */
 
@@ -155,3 +166,4 @@ video {
     animation: cat-zoom 20s forwards;
 }
 
+(srgb 0.790588 0.511373 0.0533333)
