@@ -11,24 +11,28 @@
 
     <!-- Security token -->
     {% csrf_token %}
- 
-    <div class="container-fluid my-5">
+
+    <div class="container col col-sm-10 col-md-8 col-lg-6 my-5 box-dark rounded border-0 p-4 text-light">
         <div class="row">
             <div class="col">
-                <h4 class="text-center">Edit application for {{ application.cat }}</h4>
+                <h4 class="text-center ">Application for {{ application.cat }}</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col col-sm-10 col-md-8 col-lg-6 mx-auto">
+            <div class="col col-sm-10 mx-auto">
                 <!-- Using the formset -->
-                {{ form|crispy }}
-                
-                <input type="submit" value="Update">
+                <div class="shadow">
+                    {{ form.application_text|as_crispy_field }}
+                    <span class="d-none">{{ form.cat|as_crispy_field }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button class="btn btn-primary shadow" type="submit" value="Update">Update</button>
             </div>
         </div>
     </div>
-
-     
 
 </form>
 

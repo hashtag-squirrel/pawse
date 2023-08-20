@@ -7,16 +7,24 @@
 {% block content %}
 
 
-<form method="post">{% csrf_token %}
-    <div class="container-fluid my-5">
+<form method="post">
+    {% csrf_token %}
+
+    <div class="container col col-sm-10 col-md-8 col-lg-6 my-5 box-dark rounded border-0 p-4 text-light">
         <div class="row">
-            <div class="text-center">
-    <p>Are you sure you want to delete your application for {{ application.cat }}?</p>
-    {{ form|crispy }}
-    <input type="submit" value="Confirm" class="mx-auto">
-</div>
-</div>
-</div>
+            <div class="col col-sm-10 text-center mx-auto p-3">
+                <h5>Are you sure you want to delete your application for {{ application.cat }}?</h5>
+                <p>This action can not be reversed.</p>
+                {{ form|crispy }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center p-3">
+                <button type="submit" value="Confirm" class="btn btn-primary shadow">Confirm</button>
+            </div>
+        </div>
+    </div>
+        
 </form>
 
 
