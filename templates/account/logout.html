@@ -6,24 +6,22 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid my-5">
   <div class="row mt-4">
     <div class="col-4 mx-auto">
-      <div class="card mx-auto">
-        <div class="card-body">
-          <h5 class="card-title">{% trans "Logout" %}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{% trans 'Are you sure you want to sign out?' %}</h6>
-          <form method="post" action="{% url 'account_logout' %}">
+      <div class="card mx-auto shadow p-4 border-0">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title text-center">{% trans "Logout" %}</h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">{% trans 'Are you sure you want to sign out?' %}</h6>
+          <form class="my-4" method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
             {% endif %}
-            <button class="btn btn-primary" type="submit">{% trans 'Sign Out' %}</button>
+            <button class="btn btn-primary shadow" type="submit">{% trans 'Sign Out' %}</button>
           </form>
         </div>
       </div>
-      
-      
       
     </div>
   </div>
