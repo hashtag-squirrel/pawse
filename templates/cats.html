@@ -10,8 +10,8 @@
 <section>
 <div class="container-fluid my-5">
     <div class="row">
-        <div class="col col-sm-10 col-md-8 col-lg-6 mx-auto">
-            <div id="catCarousel" class="carousel slide shadow rounded" data-bs-ride="false">
+        <div class="col col-sm-10 col-md-9 col-lg-8 col-xl-6 mx-auto">
+            <div id="catCarousel" class="carousel carousel-dark slide shadow rounded" data-bs-ride="false">
                 <div class="carousel-indicators">
                     {% for i in cats %}
                         {% if forloop.first %}
@@ -32,7 +32,7 @@
                                 <div class="card-img-wrap rounded-top">
                                     <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body p-5">
                                     <h5>{{ cat.name }}</h5>
                                     <h6>{{ cat.get_age }}</h6>
                                     <p class="card-text mb-3">{{ cat.description }}</p>
