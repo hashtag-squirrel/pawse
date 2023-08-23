@@ -6,7 +6,7 @@ from django.db import models
 class MenuCategory(models.Model):
 
     name = models.CharField(max_length=30, unique=True)
-    order = models.IntegerField(unique=True, null=True)
+    order = models.IntegerField(unique=True)
 
     class Meta:
         ordering = ['order']
