@@ -15,6 +15,7 @@ django-allauth = "*"
 django-autoslug = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+django-active-link = "*"
 
 [dev-packages]
 

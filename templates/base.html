@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load active_link_tags %}
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -33,27 +35,27 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active text-success" aria-current="page" href="{% url 'home' %}">Pawse</a>
+                  <li class="nav-item ">
+                    <a class="nav-link {% active_link 'home' 'active' strict=True %}" href="{% url 'home' %}">Pawse</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+                    <a class="nav-link {% active_link 'menu' 'active' strict=True %}" href="{% url 'menu' %}">Menu</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cats' %}">Cats</a>
+                    <a class="nav-link {% active_link 'cats' 'active' strict=True %}" href="{% url 'cats' %}">Cats</a>
                   </li>
                   {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% active_link 'account_logout' 'active' strict=True %}" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    {% else %}
+                  {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link {% active_link 'account_signup' 'active' strict=True %}" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% active_link 'account_login' 'active' strict=True %}" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    {% endif %}
+                  {% endif %}
                 </ul>
               </div>
             </div>
