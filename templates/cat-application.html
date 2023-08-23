@@ -6,34 +6,35 @@
 
 {% block content %}
 
+<!-- Cat Application -->
+<section class="container">
+    <form method="POST" enctype="multipart/form-data">
 
-<form method="POST" enctype="multipart/form-data">
-
-    <!-- Security token -->
-    {% csrf_token %}
- 
-    <div class="container col col-sm-10 col-md-8 col-lg-6 my-5 box-dark rounded border-0 p-4 text-light">
-        <div class="row">
-            <div class="col">
-                <h4 class="text-center ">Application for {{ slug|title }}</h4>
+        <!-- Security token -->
+        {% csrf_token %}
+    
+        <div class="container col col-sm-10 col-md-8 col-lg-6 my-5 box-dark rounded border-0 p-4 text-light">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center ">Application for {{ slug|title }}</h4>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col col-sm-10 mx-auto">
-                <!-- Using the formset -->
-                <div class="shadow">
-                    {{ form.application_text|as_crispy_field }}
+            <div class="row">
+                <div class="col col-sm-10 mx-auto">
+                    <!-- Using the formset -->
+                    <div class="shadow">
+                        {{ form.application_text|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <button class="btn btn-primary shadow" type="submit" value="Submit">Submit</button>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <button class="btn btn-primary shadow" type="submit" value="Submit">Submit</button>
-            </div>
-        </div>
-    </div>
 
-</form>
-
+    </form>
+</section>
 
 {% endblock %}
