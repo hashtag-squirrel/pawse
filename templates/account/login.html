@@ -7,44 +7,25 @@
 
 {% block content %}
 
-{% get_providers as socialaccount_providers %}
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please log in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-<div class="socialaccount_ballot">
-
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
-</div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-
-
-<div class="container-fluid">
-  <div class="row mt-4">
-    <div class="col-4 mx-auto">
-      <div class="card mx-auto">
+<div class="container-fluid my-5">
+  <div class="row">
+    <div class="col col-sm-8 col-lg-4 mx-auto">
+      <div class="card mx-auto shadow p-4 border-0">
         <div class="card-body">
-          <h5 class="card-title">{% trans "Login" %}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{% blocktrans %}Don't have an account yet? Then please <a href="{{ signup_url }}">register</a>.{% endblocktrans %}</h6>
-          {% endif %}
-          <form class="login" method="POST" action="{% url 'account_login' %}">
+          <h5 class="card-title text-center">{% trans "Login" %}</h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">{% blocktrans %}Don't have an account yet? Then please <a href="{{ signup_url }}">register</a>.{% endblocktrans %}</h6>
+
+          <form class="login my-4" method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form|crispy }}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
             <!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
-            <button class="primaryAction btn-primary" type="submit">{% trans "Login" %}</button>
+            <div class="d-flex justify-content-center">
+              <button class="primaryAction btn btn-primary shadow" type="submit">{% trans "Login" %}</button>
+            </div>
           </form>
         </div>
       </div>

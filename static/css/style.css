@@ -5,16 +5,17 @@
 /* main color definition */
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #197278;
-    --secondary-color-dark: #283D3B;
-    --highlight-color: #C44536;
-    --highlight-color-dark: #772E25; 
+    --secondary-color: #000000;
+    --blue-color: rgb(20, 33, 61);
+    --highlight-color: #FCA311;
+    --highlight-color-dark: color-mix(in hsl, var(--highlight-color) 80%, black 20%);
+    --grey-color: #E5E5E5; 
 }
 
 /* text colors */
 
 .text-dark {
-    color: var(--secondary-color-dark) !important;    
+    color: var(--secondary-color) !important;    
 }
 
 .text-light {
@@ -22,44 +23,60 @@
 }
 
 .text-danger {
+    color: var(--highlight-color) !important;
+}
+
+.text-primary {
     color: var(--highlight-color-dark) !important;
 }
 
 .text-success {
-    color: var(--secondary-color) !important;
+    color: var(--blue-color) !important;
+}
+
+.text-secondary {
+    color: rgba(0, 0, 0, 0.5) !important
 }
 
 .btn-primary {
-    background-color: var(--secondary-color) !important;
-    color: white !important;
+    background-color: var(--highlight-color) !important;
+    color: black !important;
     border: none;
 }
 
 /* background colors */
+
+.box-dark {
+    background-color: rgb(20, 33, 61, 0.75) !important;
+}
 
 body {
     background-color: var(--primary-color);
 }
 
 .navbar-light {
-    color: black;
+    color: var(--blue-color) !important;
     background-color: var(--primary-color);
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--secondary-color-dark) !important;
+    color: var(---blue-color) !important;
 }
 
 .navbar-light .navbar-nav .nav-link.active:hover {
-    color: var(--secondary-color) !important;
+    color: var(--highlight-color) !important;
 }
 
-.navbar a:hover {
-    color: var(--secondary-color) !important;
+a:hover {
+    color: var(--highlight-color) !important;
 }
 
-.footer a:hover {
-    color: var(--secondary-color) !important;
+#logo {
+    background-color: var(--highlight-color);
+}
+
+#logo:hover {
+    background-color: var(--blue-color);
 }
 
 /* Body */
@@ -67,6 +84,7 @@ body {
 body {
     margin-bottom: 30px;
     background-attachment: fixed;
+    background-size: 70%;
 }
 
 main {
@@ -79,7 +97,7 @@ a {
 }
 
 .btn:hover {
-    background-color: var(--highlight-color) !important;
+    color: white !important;
 }
 
 .btn a:hover {
@@ -87,6 +105,74 @@ a {
 }
 
 /* Footer */
- footer {
+footer {
     background: white;
- }
+}
+
+/* Landing page hero section */
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-content {
+    height: 100%;
+    position: relative;
+    color: #fff;
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+/* Landing page testimonials section */
+
+.testimonial::before { 
+    font: var(--fa-font-solid);
+    font-size: 350%;
+    color: var(--highlight-color);
+    content: "\f10d";
+    position: absolute;
+    top: -30px;
+    left: -3%;
+}
+
+/* Menu page */
+
+.menu-item-name {
+    text-shadow: 5px 5px 7px var(--highlight-color);
+}
+
+
+/* Cats page carousel section */
+
+.card-img-wrap {
+    overflow: hidden;
+}
+
+
+@keyframes cat-zoom {
+    from {transform: scale(1);}
+    to {transform: scale(1.5);}
+}
+
+.cat-img {
+    animation: cat-zoom 20s forwards;
+}
+
+
+/* Button sizes */
+
+.btn-sm {
+    width: 60px;
+}
+
+.btn-md {
+    width: 300px;
+}

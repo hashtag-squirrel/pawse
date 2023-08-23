@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'crispy_bootstrap5',
+    'active_link',
     'pages',
     'menu',
     'cats',

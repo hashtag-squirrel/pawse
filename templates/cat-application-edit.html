@@ -6,31 +6,36 @@
 
 {% block content %}
 
+<!-- Edit application section -->
+<section class="container">
+    <form method="POST" enctype="multipart/form-data">
 
-<form method="POST" enctype="multipart/form-data">
+        <!-- Security token -->
+        {% csrf_token %}
 
-    <!-- Security token -->
-    {% csrf_token %}
- 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h4 class="text-center">Edit application for {{ application.cat }}</h4>
+        <div class="container col col-sm-10 col-md-8 col-lg-6 my-5 box-dark rounded border-0 p-4 text-light">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center ">Application for {{ application.cat }}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-10 mx-auto">
+                    <!-- Using the formset -->
+                    <div class="shadow">
+                        {{ form.application_text|as_crispy_field }}
+                        <span class="d-none">{{ form.cat|as_crispy_field }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <button class="btn btn-primary shadow" type="submit" value="Update">Update</button>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col col-sm-10 col-md-8 col-lg-6 mx-auto">
-                <!-- Using the formset -->
-                {{ form|crispy }}
-                
-                <input type="submit" value="Update">
-            </div>
-        </div>
-    </div>
 
-     
-
-</form>
-
+    </form>
+</section>
 
 {% endblock %}

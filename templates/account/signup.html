@@ -5,20 +5,24 @@
 {% block head_title %}{% trans "Register" %}{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid my-5">
   <div class="row mt-4">
-    <div class="col-4 mx-auto">
-      <div class="card mx-auto">
+    <div class="col col-sm-8 col-lg-4 mx-auto">
+      <div class="card mx-auto shadow p-4 border-0">
         <div class="card-body">
-          <h5 class="card-title">{% trans "Register" %}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</h6>
-          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          <h5 class="card-title text-center">{% trans "Register" %}</h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</h6>
+          <form class="signup my-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
-            {{ form|crispy }}
+            {{ form.username|as_crispy_field }}
+            {{ form.password1|as_crispy_field }}
+            {{ form.password2|as_crispy_field }}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn-primary" type="submit">{% trans "Register" %}</button>
+            <div class="d-flex justify-content-center p-3">
+              <button class="btn btn-primary shadow" type="submit">{% trans "Register" %}</button>
+            </div>
           </form>
         </div>
       </div>
