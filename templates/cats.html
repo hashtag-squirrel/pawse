@@ -32,12 +32,12 @@
                                 <div class="card-img-wrap rounded-top">
                                     <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
                                 </div>
-                                <div class="card-body p-5">
+                                <div class="card-body p-5 m-4">
                                     <h5>{{ cat.name }}</h5>
                                     <h6>{{ cat.get_age }}</h6>
-                                    <p class="card-text mb-3">{{ cat.description }}</p>
+                                    <p class="card-text">{{ cat.description }}</p>
                                     <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
-                                    <div class="d-grid col-7 mx-auto pb-5">
+                                    <div class="d-grid col-7 mx-auto pb-3">
                                         {% if user.is_authenticated %}
                                             {% if applications %}
                                                 {% with False as flag %}
