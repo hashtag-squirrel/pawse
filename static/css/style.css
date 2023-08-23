@@ -166,4 +166,12 @@ video {
     animation: cat-zoom 20s forwards;
 }
 
-(srgb 0.790588 0.511373 0.0533333)
+/* Button sizes */
+
+.btn-sm {
+    width: 60px;
+}
+
+.btn-md {
+    width: 300px;
+}
