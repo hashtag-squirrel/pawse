@@ -56,16 +56,16 @@
                                                     {% update_variable True as flag %}
                                                     {% else %}
                                                         {% if not flag and forloop.counter == applications|length %}
-                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
+                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
                                                 {% endwith %}
                                             {% else %}
-                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
+                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
                                             {% endif %}
                                         {% else %}
-                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply for {{ cat.name }} now!</a></button>
+                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
                                         {% endif %}
                                     </div>
                                 </div>
