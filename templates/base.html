@@ -46,14 +46,14 @@
                   </li>
                   {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% active_link 'account_logout' 'active' strict=True %}" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% active_link 'account_logout' 'active' strict=True %}" href="{% url 'account_logout' %}?next={{ request.get_full_path|urlencode }}">Logout</a>
                     </li>
                   {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% active_link 'account_signup' 'active' strict=True %}" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link {% active_link 'account_signup' 'active' strict=True %}" href="{% url 'account_signup' %}?next={{ request.get_full_path|urlencode }}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% active_link 'account_login' 'active' strict=True %}" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% active_link 'account_login' 'active' strict=True %}" href="{% url 'account_login' %}?next={{ request.get_full_path|urlencode }}">Login</a>
                     </li>
                   {% endif %}
                 </ul>

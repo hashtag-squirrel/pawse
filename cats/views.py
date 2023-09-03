@@ -18,22 +18,6 @@ class CatsView(generic.ListView):
             user=self.request.user.id)
         return context
 
-    # def get(self, request, *args, **kwargs):
-    #     queryset = Cat.objects.all()
-    #     cat = get_object_or_404(queryset)
-    #     applied = False
-
-    #     if cat.applications.filter(user=self.request.user.id).exists():
-    #         applied = True
-
-    #     return render(
-    #         request,
-    #         'cats.html',
-    #         {
-    #             "applied": applied,
-    #         },
-    #     )
-
 
 @method_decorator(login_required, name='dispatch')
 class CatApplicationView(generic.CreateView):
@@ -64,7 +48,7 @@ class CatApplicationEditView(generic.UpdateView):
 
     model = CatApplication
     context_object_name = 'application'
-    fields = ['application_text', 'cat']
+    fields = ['application_text']
 
     template_name = 'cat-application-edit.html'
 

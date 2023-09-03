@@ -1,5 +1,5 @@
 from django.urls import path
-from cats.views import CatsView, CatApplicationView, CatApplicationEditView, CatApplicationDeleteView
+from cats.views import CatsView, CatApplicationView, CatApplicationEditView, CatApplicationDeleteView  # noqa
 
 urlpatterns = [
     path('', CatsView.as_view(), name='cats'),
