@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Cat, CatApplication, User
-from datetime import date, timedelta, datetime
+from datetime import date, timedelta
 
 
 # Create your tests here

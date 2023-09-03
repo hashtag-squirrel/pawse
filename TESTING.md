@@ -25,3 +25,9 @@
 ## Feature Testing
 
 ## Automated Testing
+
+Automated tests were written for all three apps: pages, menu and cats. 
+
+The coverage for these apps is as follows:
+
+![Test Coverage](static/docs/coverage.png)
