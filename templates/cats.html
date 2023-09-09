@@ -8,74 +8,73 @@
 
 <!-- Cat Carousel section -->
 <section>
-<div class="container-fluid my-5">
-    <div class="row">
-        <div class="col col-sm-10 col-md-9 col-lg-8 col-xl-6 mx-auto">
-            <div id="catCarousel" class="carousel carousel-dark slide shadow rounded" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    {% for i in cats %}
-                        {% if forloop.first %}
-                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
-                        {% else %}
-                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" aria-label="{{ forloop.counter }}"></button>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="carousel-inner">
-                    {% for cat in cats %}
-                        {% if forloop.first %}
-                            <div class="carousel-item active">
-                        {% else %}
-                            <div class="carousel-item">
-                        {% endif %}
-                            <div class="card border-0 rounded">
-                                <div class="card-img-wrap rounded-top">
-                                    <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
-                                </div>
-                                <div class="card-body p-5 m-4">
-                                    <h5>{{ cat.name }}</h5>
-                                    <h6>{{ cat.get_age }}</h6>
-                                    <p class="card-text">{{ cat.description }}</p>
-                                    <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
-                                    <div class="d-grid col-7 mx-auto pb-3">
-                                        {% if user.is_authenticated %}
-                                            {% if applications %}
-                                                {% with False as flag %}
-                                                {% for application in applications %}
-                                                    {% if application.cat == cat %}
-                                                    <button type="button" class="btn btn-primary shadow cat-btn" disabled>You have applied for this cat.</button>
-                                                    {% update_variable True as flag %}
-                                                    {% else %}
-                                                        {% if not flag and forloop.counter == applications|length %}
-                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col col-sm-10 col-md-9 col-lg-8 col-xl-6 mx-auto">
+                <div id="catCarousel" class="carousel carousel-dark slide shadow rounded" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                        {% for i in cats %}
+                            {% if forloop.first %}
+                                <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
+                            {% else %}
+                                <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" aria-label="{{ forloop.counter }}"></button>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for cat in cats %}
+                            {% if forloop.first %}
+                                <div class="carousel-item active">
+                            {% else %}
+                                <div class="carousel-item">
+                            {% endif %}
+                                <div class="card border-0 rounded">
+                                    <div class="card-img-wrap rounded-top">
+                                        <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
+                                    </div>
+                                    <div class="card-body p-5 m-4">
+                                        <h5>{{ cat.name }}</h5>
+                                        <h6>{{ cat.get_age }}</h6>
+                                        <p class="card-text">{{ cat.description }}</p>
+                                        <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
+                                        <div class="d-grid col-7 mx-auto pb-3">
+                                            {% if user.is_authenticated %}
+                                                {% if applications %}
+                                                    {% with False as flag %}
+                                                    {% for application in applications %}
+                                                        {% if application.cat == cat %}
+                                                        <button type="button" class="btn btn-primary shadow cat-btn" disabled>You have applied for this cat.</button>
+                                                        {% update_variable True as flag %}
+                                                        {% else %}
+                                                            {% if not flag and forloop.counter == applications|length %}
+                                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
+                                                            {% endif %}
                                                         {% endif %}
-                                                    {% endif %}
-                                                {% endfor %}
-                                                {% endwith %}
+                                                    {% endfor %}
+                                                    {% endwith %}
+                                                {% else %}
+                                                    <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
+                                                {% endif %}
                                             {% else %}
-                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
+                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
                                             {% endif %}
-                                        {% else %}
-                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
-                                        {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                                
-                        </div>
-                    {% endfor %}
-                
-                </div>
-                <button class="carousel-control-prev " type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+                        {% endfor %}
+                    </div>
 
+                    <button class="carousel-control-prev " type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
