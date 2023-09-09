@@ -6,9 +6,9 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #000000;
-    --blue-color: rgb(20, 33, 61);
+    --blue-color: #14213D;
     --highlight-color: #FCA311;
-    --highlight-color-dark: color-mix(in hsl, var(--highlight-color) 80%, black 20%);
+    --highlight-color-dark: rgb(192, 107, 24);
     --grey-color: #E5E5E5; 
 }
 
@@ -55,16 +55,7 @@ body {
 }
 
 .navbar-light {
-    color: var(--blue-color) !important;
     background-color: var(--primary-color);
-}
-
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(---blue-color) !important;
-}
-
-.navbar-light .navbar-nav .nav-link.active:hover {
-    color: var(--highlight-color) !important;
 }
 
 a:hover {

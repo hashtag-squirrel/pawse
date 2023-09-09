@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect  # noqa
+from django.shortcuts import reverse, HttpResponseRedirect 
 from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
@@ -49,7 +49,6 @@ class CatApplicationView(generic.CreateView):
             return HttpResponseRedirect('/cats')
         messages.success(self.request, 'SUCCESS! Application added!')
         return super(CatApplicationView, self).form_valid(form)
-
 
 
 @method_decorator(login_required, name='dispatch')

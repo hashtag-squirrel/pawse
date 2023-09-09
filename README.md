@@ -31,6 +31,7 @@ This project was made from scratch, only taking the idea of the previous cat caf
     - [Languages](#languages)
     - [Frameworks](#frameworks)
     - [Modules/Packages](#modulespackages)
+    - [Other Tools](#other-tools)
   - [Testing \& Validation](#testing--validation)
   - [Deployment \& Development](#deployment--development)
     - [Deployment on Heroku](#deployment-on-heroku)
@@ -208,6 +209,10 @@ Site Admin features:
 ### Frameworks
 
 ### Modules/Packages
+
+### Other Tools
+
+[RGB to Hex converter](https://www.rgbtohex.net/)
 
 ## Testing & Validation
 

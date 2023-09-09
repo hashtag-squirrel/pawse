@@ -7,9 +7,18 @@
   - [Lighthouse Testing](#lighthouse-testing)
   - [Code Valitation](#code-valitation)
     - [HTML Validation](#html-validation)
+      - [Landing page](#landing-page)
+      - [Menu page](#menu-page)
+      - [Cats page](#cats-page)
+      - [Cat application pages](#cat-application-pages)
+      - [Login, Logout and Register pages](#login-logout-and-register-pages)
     - [CSS Validation](#css-validation)
     - [JavaScript Validation](#javascript-validation)
     - [Python Validation](#python-validation)
+      - [Pawse Project](#pawse-project)
+      - [Pages App](#pages-app)
+      - [Menu App](#menu-app)
+      - [Cats App](#cats-app)
   - [User Story Testing](#user-story-testing)
   - [Feature Testing](#feature-testing)
   - [Automated Testing](#automated-testing)
@@ -26,31 +35,82 @@
 
 ### HTML Validation
 
-Landing page: Error with missing div, width % in iframe
+All pages were checked with the [W3 HTML checker](https://validator.w3.org/nu/). 
+Since parts of the pages are generated server-side, the pages were checked using the deployed version on Heroku, using the option to "View Page Source" in Chrome and inputting the source code for each page separately into the text input on the W3 Checker. 
 
-Menu page: Error with wrong header endtag (h5 instead of h4), error with p tag on card text
+At first, several pages had a couple of errors and warnings, but all errors and warnings were fixed until the checker showed none for every page as seen in below image:
 
-Cats page: element a must not appear as descendant of button, div end tags wrong, section didn't contain header
+![HTML validation](static/docs/html-validation.png)
 
-Cat application page: no errors/warnings
+#### Landing page
+The landing page showed an error with a missing div end tag. The tag was identified and added. 
+It also showed the error that the width for the iframe with the embedded map was set to a percentage instead of an absolute number. This was fixed by moving the style information to the stylesheet instead.
 
-Edit cat application page: no errors/warnings
+#### Menu page
+The menu page showed an error with a wrong header end tag. It had an h5 end tag, but the header was an h4. The end tag was fixed accordingly. 
+It also showed an error with p end tag which could not be correctly matched to the p tag with the class of card-text. This was fixed by changing the tag into a div, which is more appropriate anyways.
 
-Delete cat application page: no errors/warnings
+#### Cats page
+The cats page showed several errors. It showed an error that an a element must not appear as descendant of a button element, which appeared five times on the generated cat cards. This was fixed by adding the button classes directly to the a tag instead and removing the button tags altogether. 
+It also showed errors with some div end tags missing and too much, which was fixed by identifying all divs and checking that they had the appropriate end tags.
+Lastly, it showed a warning that the application section didn't contain a header. I am not sure why it showed this, because it does contain an h4, just not as a direct child. Either way, this was fixed by changing the section into a div. 
 
-Login page: Trailing slash on self-closing tags
+#### Cat application pages
+None of the cat application pages showed errors or warnings. 
 
-Register page: Trailing slash on self-closing tags
+#### Login, Logout and Register pages
 
-Logout page: Trailing slash on self-closing tags
-
-
+These all showed the same warning that the trailing slash on self-closing tags does not have any effect. The trailing slash was removed on all pages. 
 
 ### CSS Validation
 
+CSS was validated using the [Jigsaw validator from W3C](https://jigsaw.w3.org/css-validator/validator). No errors were found.
+
+![CSS validation](static/docs/css-validation.png)
+
 ### JavaScript Validation
 
+The custom JavaScript was validated using [JSHint](https://jshint.com/) which showed no errors. 
+
+![JS validation](static/docs/js-validation.png)
+
 ### Python Validation
+
+The CI Python Linter was used to validate the Python files created or edited for the Django project. Unchanged project files and settings.py were not validated.
+
+No errors came up for any of the files. Click on the links below to see screenshots of the results. 
+
+#### Pawse Project
+
+- [urls.py](static/docs/python-validation/pawse-urls.png)
+
+#### Pages App
+
+- [test_views.py](static/docs/python-validation/pages-test-views.png)
+- [urls.py](static/docs/python-validation/pages-urls.png)
+- [views.py](static/docs/python-validation/pages-views.png)
+
+admin.py and models.py were not used.
+
+#### Menu App
+
+- [admin.py](static/docs/python-validation/menu-admin.png)
+- [models.py](static/docs/python-validation/menu-models.png)
+- [test_models.py](static/docs/python-validation/menu-test-models.png)
+- [test_views.py](static/docs/python-validation/menu-test-views.png)
+- [urls.py](static/docs/python-validation/menu-urls.png)
+- [views.py](static/docs/python-validation/menu-views.png)
+
+#### Cats App
+
+- [admin.py](static/docs/python-validation/cats-admin.png)
+- [models.py](static/docs/python-validation/cats-models.png)
+- [test_models.py](static/docs/python-validation/cats-test-models.png)
+- [test_views.py](static/docs/python-validation/cats-test-views.png)
+- [urls.py](static/docs/python-validation/cats-urls.png)
+- [views.py](static/docs/python-validation/cats-views.png)
+
+On urls.py the `noqa` tag was used on the line importing the views, since I deemed it less readable if I split this up on several lines.
 
 ## User Story Testing
 
