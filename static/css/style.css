@@ -148,6 +148,28 @@ video {
     left: -3%;
 }
 
+/* Landing page Find us section */
+
+#address::before { 
+    font: var(--fa-font-solid);
+    font-size: 350%;
+    color: var(--highlight-color);
+    content: "\f3c5";
+    position: absolute;
+    top: -30px;
+    left: -3%;
+}
+
+#info::before { 
+    font: var(--fa-font-solid);
+    font-size: 350%;
+    color: var(--highlight-color);
+    content: "\f0eb";
+    position: absolute;
+    top: -30px;
+    left: -3%;
+}
+
 /* Menu page */
 
 .menu-item-name {
