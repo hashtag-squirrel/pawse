@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.defaults import server_error
 
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     path('menu/', include('menu.urls'), name='menu-urls'),
     path('cats/', include('cats.urls'), name='cats-urls'),
     path('accounts/', include('allauth.urls')),
+    path('500/', server_error)
 ]
