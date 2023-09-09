@@ -6,6 +6,10 @@
   - [Bug Testing](#bug-testing)
   - [Lighthouse Testing](#lighthouse-testing)
   - [Code Valitation](#code-valitation)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+    - [Python](#python)
   - [User Story Testing](#user-story-testing)
   - [Feature Testing](#feature-testing)
   - [Automated Testing](#automated-testing)
@@ -19,6 +23,14 @@
 ## Lighthouse Testing
 
 ## Code Valitation
+
+### HTML
+
+### CSS
+
+### JavaScript
+
+### Python
 
 ## User Story Testing
 
