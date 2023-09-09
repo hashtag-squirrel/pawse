@@ -6,10 +6,10 @@
   - [Bug Testing](#bug-testing)
   - [Lighthouse Testing](#lighthouse-testing)
   - [Code Valitation](#code-valitation)
-    - [HTML](#html)
-    - [CSS](#css)
-    - [JavaScript](#javascript)
-    - [Python](#python)
+    - [HTML Validation](#html-validation)
+    - [CSS Validation](#css-validation)
+    - [JavaScript Validation](#javascript-validation)
+    - [Python Validation](#python-validation)
   - [User Story Testing](#user-story-testing)
   - [Feature Testing](#feature-testing)
   - [Automated Testing](#automated-testing)
@@ -24,13 +24,33 @@
 
 ## Code Valitation
 
-### HTML
+### HTML Validation
 
-### CSS
+Landing page: Error with missing div, width % in iframe
 
-### JavaScript
+Menu page: Error with wrong header endtag (h5 instead of h4), error with p tag on card text
 
-### Python
+Cats page: element a must not appear as descendant of button, div end tags wrong, section didn't contain header
+
+Cat application page: no errors/warnings
+
+Edit cat application page: no errors/warnings
+
+Delete cat application page: no errors/warnings
+
+Login page: Trailing slash on self-closing tags
+
+Register page: Trailing slash on self-closing tags
+
+Logout page: Trailing slash on self-closing tags
+
+
+
+### CSS Validation
+
+### JavaScript Validation
+
+### Python Validation
 
 ## User Story Testing
 

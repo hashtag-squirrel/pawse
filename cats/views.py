@@ -40,7 +40,7 @@ class CatApplicationView(generic.CreateView):
         form.instance.user = self.request.user
         form.instance.cat = Cat.objects.get(slug=self.kwargs['slug'])
         user_application = CatApplication.objects.filter(
-            user=self.request.user)
+            user=self.request.user, cat=form.instance.cat)
         if user_application.count() > 0:
             messages.error(
                 self.request,
