@@ -81,7 +81,7 @@
 </section>
 
 <!-- Cat Applications section -->
-<section class="container">
+<div class="container">
     {% if user.is_authenticated %}
         {% if applications %}
             <div class="container box-dark rounded border-0 my-5">
@@ -113,6 +113,6 @@
             </div>
         {% endif %}
     {% endif %}
-</section>
+</div>
 
 {% endblock %}
