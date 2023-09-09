@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse  # noqa
+from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect  # noqa
 from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
@@ -39,8 +39,17 @@ class CatApplicationView(generic.CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.cat = Cat.objects.get(slug=self.kwargs['slug'])
+        user_application = CatApplication.objects.filter(
+            user=self.request.user)
+        if user_application.count() > 0:
+            messages.error(
+                self.request,
+                f'You already have an application for {form.instance.cat}!'
+                )
+            return HttpResponseRedirect('/cats')
         messages.success(self.request, 'SUCCESS! Application added!')
         return super(CatApplicationView, self).form_valid(form)
+
 
 
 @method_decorator(login_required, name='dispatch')
