@@ -27,7 +27,9 @@
       - [Device Testing](#device-testing)
     - [Browser Compatibility Testing](#browser-compatibility-testing)
     - [User Story Testing](#user-story-testing)
-    - [Feature Testing](#feature-testing)
+  - [Bugs](#bugs)
+    - [Unresolved Bugs](#unresolved-bugs)
+    - [Fixed Bugs](#fixed-bugs)
 
 ## Lighthouse Testing
 
@@ -346,5 +348,8 @@ Browsers:
 |                                        | As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                            |         |
 | Site Owner Features                    | As a site owner, I want the site to be visually pleasing so that users like to come back/share it                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                            |         |
 
-### Feature Testing
+## Bugs
 
+### Unresolved Bugs
+
+### Fixed Bugs

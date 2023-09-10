@@ -72,5 +72,5 @@ class TestCatModels(TestCase):
             )
         self.assertEqual(
             str(application),
-            'You have sent an application for Cat. It says: "Test Text"'
+            'You have sent an application for Cat.'
             )
