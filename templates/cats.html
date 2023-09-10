@@ -8,117 +8,111 @@
 
 <!-- Cat Carousel section -->
 <section>
-<div class="container-fluid my-5">
-    <div class="row">
-        <div class="col col-sm-10 col-md-9 col-lg-8 col-xl-6 mx-auto">
-            <div id="catCarousel" class="carousel carousel-dark slide shadow rounded" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    {% for i in cats %}
-                        {% if forloop.first %}
-                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
-                        {% else %}
-                            <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" aria-label="{{ forloop.counter }}"></button>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="carousel-inner">
-                    {% for cat in cats %}
-                        {% if forloop.first %}
-                            <div class="carousel-item active">
-                        {% else %}
-                            <div class="carousel-item">
-                        {% endif %}
-                            <div class="card border-0 rounded">
-                                <div class="card-img-wrap rounded-top">
-                                    <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
-                                </div>
-                                <div class="card-body p-5 m-4">
-                                    <h5>{{ cat.name }}</h5>
-                                    <h6>{{ cat.get_age }}</h6>
-                                    <p class="card-text">{{ cat.description }}</p>
-                                    <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
-                                    <div class="d-grid col-7 mx-auto pb-3">
-                                        {% if user.is_authenticated %}
-                                            {% if applications %}
-                                                {% with False as flag %}
-                                                {% for application in applications %}
-                                                    {% if application.cat == cat %}
-                                                    <button type="button" class="btn btn-primary shadow cat-btn" disabled>You have applied for this cat.</button>
-                                                    {% update_variable True as flag %}
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col col-sm-10 col-md-9 col-lg-8 col-xl-6 mx-auto">
+                <div id="catCarousel" class="carousel carousel-dark slide shadow rounded" data-bs-ride="false">
+                    <div class="carousel-indicators">
+                        {% for i in cats %}
+                            {% if forloop.first %}
+                                <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" class="active" aria-current="true" aria-label="{{ forloop.counter }}"></button>
+                            {% else %}
+                                <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="{{ forloop.counter|add:'-1' }}" aria-label="{{ forloop.counter }}"></button>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for cat in cats %}
+                            {% if forloop.first %}
+                                <div class="carousel-item active">
+                            {% else %}
+                                <div class="carousel-item">
+                            {% endif %}
+                                    <div class="card border-0 rounded">
+                                        <div class="card-img-wrap rounded-top">
+                                            <img src="{{ cat.image.url }}" class="card-img-top cat-img" alt="{{ cat.name}}">
+                                        </div>
+                                        <div class="card-body p-5 m-4">
+                                            <h5>{{ cat.name }}</h5>
+                                            <h6>{{ cat.get_age }}</h6>
+                                            <p class="card-text">{{ cat.description }}</p>
+                                            <p class="card-text">Applications for {{ cat.name }}: {{ cat.number_of_applications }}</p>
+                                            <div class="d-grid col-7 mx-auto pb-3">
+                                                {% if user.is_authenticated %}
+                                                    {% if applications %}
+                                                        {% with False as flag %}
+                                                        {% for application in applications %}
+                                                            {% if application.cat == cat %}
+                                                            <button type="button" class="btn btn-primary shadow cat-btn" disabled>You have applied for this cat.</button>
+                                                            {% update_variable True as flag %}
+                                                            {% else %}
+                                                                {% if not flag and forloop.counter == applications|length %}
+                                                                    <a class="btn btn-primary shadow cat-btn" href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                        {% endwith %}
                                                     {% else %}
-                                                        {% if not flag and forloop.counter == applications|length %}
-                                                            <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
-                                                        {% endif %}
+                                                        <a class="btn btn-primary shadow cat-btn" href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a>
                                                     {% endif %}
-                                                {% endfor %}
-                                                {% endwith %}
-                                            {% else %}
-                                                <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
-                                            {% endif %}
-                                        {% else %}
-                                        <button type="button" class="btn btn-primary shadow cat-btn"><a href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a></button>
-                                        {% endif %}
-                                    </div>
+                                                {% else %}
+                                                <a class="btn btn-primary shadow cat-btn" href="{% url 'cat-application' cat.slug %}">Apply to adopt {{ cat.name }} now!</a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>   
                                 </div>
-                            </div>
-                                
-                        </div>
-                    {% endfor %}
-                
+                        {% endfor %}
+                    
+                    </div>
+                    <button class="carousel-control-prev " type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev " type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
 
+            </div>
         </div>
-    </div>
+    </div>  
 </section>
 
 <!-- Cat Applications section -->
-<section class="container">
+<div class="container">
     {% if user.is_authenticated %}
-    {% if applications %}
-    <div class="container box-dark rounded border-0 my-5">
-        <div class="row ">
-            <div class="col mx-auto">
-
-                <h4 class="p-4 text-center text-light">Your applications</h4>
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 p-4 d-flex justify-content-center p-4">
-                    {% for application in applications %}
-                    <div class="col">
-                      <div class="card h-100 shadow">
-                        <div class="card-header">
-                            {{ application.cat }}
-                          </div>
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <div class="d-flex flex-row">
-                                <p class="card-text pb-4">{{ application.application_text}}</p>
-                            </div>
-                          
-                          <div class="d-flex flex-row justify-content-end">
-                            <a class="btn btn-primary btn-sm m-1 shadow" href="{% url 'edit-application' application.pk %}">Edit</a>
-                            <a class="btn btn-primary btn-sm m-1 shadow" href="{% url 'delete-application' application.pk %}">Delete</a>
-                          </div>
-                          
+        {% if applications %}
+            <div class="container box-dark rounded border-0 my-5">
+                <div class="row ">
+                    <div class="col mx-auto">
+                        <h4 class="p-4 text-center text-light">Your applications</h4>
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 p-4 d-flex justify-content-center p-4">
+                            {% for application in applications %}
+                                <div class="col">
+                                    <div class="card h-100 shadow">
+                                        <div class="card-header">
+                                            {{ application.cat }}
+                                        </div>
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div class="d-flex flex-row">
+                                                <p class="card-text pb-4">{{ application.application_text}}</p>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-end">
+                                                <a class="btn btn-primary btn-sm m-1 shadow" href="{% url 'edit-application' application.pk %}">Edit</a>
+                                                <a class="btn btn-primary btn-sm m-1 shadow" href="{% url 'delete-application' application.pk %}">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
                         </div>
-                      </div>
                     </div>
-                    {% endfor %}
-                  </div>
-
-                {% endif %}
-            {% endif %}
-        </div>
-    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
 </div>
-</div>
-</section>
 
 {% endblock %}

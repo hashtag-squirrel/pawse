@@ -24,7 +24,6 @@
                     <!-- Using the formset -->
                     <div class="shadow">
                         {{ form.application_text|as_crispy_field }}
-                        <span class="d-none">{{ form.cat|as_crispy_field }}</span>
                     </div>
                 </div>
             </div>
@@ -32,6 +31,9 @@
                 <div class="col d-flex justify-content-center">
                     <button class="btn btn-primary shadow" type="submit" value="Update">Update</button>
                 </div>
+            </div>
+            <div class="mt-4">
+                <p class="footnote">Please note that this is a fictional site. Check out your local shelters for cats to adopt!</p>
             </div>
         </div>
 

@@ -10,4 +10,4 @@ class MenuItemAdmin(admin.ModelAdmin):
 
 @admin.register(MenuCategory)
 class MenuCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name', 'order',)

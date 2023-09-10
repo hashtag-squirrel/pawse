@@ -16,6 +16,7 @@ django-autoslug = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
 django-active-link = "*"
+coverage = "*"
 
 [dev-packages]
 

@@ -15,8 +15,8 @@
             <div class="col">
                 <div class="card w-100 h-100 shadow">
                     <div class="card-body">
-                        <h4 class="card-title text-center">{{ category.name }}</h5>
-                        <p class="card-text">
+                        <h2 class="card-title text-center">{{ category.name }}</h2>
+                        <div class="card-text">
                             <ul class="p-1">
                                 {% for item in menu_items %}
                                     {% if item.category == category %}
@@ -39,7 +39,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </ul>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="container">
+    <div class="container my-5 box-dark rounded border-0 p-4">
+        <div class="row text-center p-4">
+            <div class="col">
+                <h1 class="text-light">404 - Not Found</h1>
+                <img class="my-5 img-fluid rounded shadow" src="{% static 'images/cat-hiding.jpg' %}" alt="Cat hiding behind its paws">
+                <button class="btn btn-primary mx-auto shadow">
+                    <a href="{% url 'home' %}">Back to Home</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

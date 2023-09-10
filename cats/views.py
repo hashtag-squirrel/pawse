@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse  # noqa
+from django.shortcuts import reverse, HttpResponseRedirect
 from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
@@ -17,22 +17,6 @@ class CatsView(generic.ListView):
         context['applications'] = CatApplication.objects.filter(
             user=self.request.user.id)
         return context
-
-    # def get(self, request, *args, **kwargs):
-    #     queryset = Cat.objects.all()
-    #     cat = get_object_or_404(queryset)
-    #     applied = False
-
-    #     if cat.applications.filter(user=self.request.user.id).exists():
-    #         applied = True
-
-    #     return render(
-    #         request,
-    #         'cats.html',
-    #         {
-    #             "applied": applied,
-    #         },
-    #     )
 
 
 @method_decorator(login_required, name='dispatch')
@@ -55,6 +39,14 @@ class CatApplicationView(generic.CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.cat = Cat.objects.get(slug=self.kwargs['slug'])
+        user_application = CatApplication.objects.filter(
+            user=self.request.user, cat=form.instance.cat)
+        if user_application.count() > 0:
+            messages.error(
+                self.request,
+                f'You already have an application for {form.instance.cat}!'
+                )
+            return HttpResponseRedirect('/cats')
         messages.success(self.request, 'SUCCESS! Application added!')
         return super(CatApplicationView, self).form_valid(form)
 
@@ -64,7 +56,7 @@ class CatApplicationEditView(generic.UpdateView):
 
     model = CatApplication
     context_object_name = 'application'
-    fields = ['application_text', 'cat']
+    fields = ['application_text']
 
     template_name = 'cat-application-edit.html'
 
