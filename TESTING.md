@@ -20,6 +20,7 @@
       - [Menu App](#menu-app)
       - [Cats App](#cats-app)
   - [Automated Testing](#automated-testing)
+    - [Running the Automated Tests](#running-the-automated-tests)
   - [Manual Testing](#manual-testing)
     - [UX Testing](#ux-testing)
     - [Responsiveness Testing](#responsiveness-testing)
@@ -234,6 +235,28 @@ Almost all statements were tested with few exceptions.
 The test coverage for the apps is as follows:
 
 ![Test Coverage](static/docs/coverage.png)
+
+### Running the Automated Tests
+
+In order to run the automated tests, you need to adjust your DATABASES in settings.py in the following way: 
+
+```
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+```
+
+You also need to make sure to set DEBUG to 'DEBUG' in env.py. This needs to be done, because the test suite needs to create a mock database in sqlite3 for the tests.
+
+Then you can open a terminal and type `python3 manage.py test` and it will run all tests, or you can specify which tests you want to run. 
 
 ## Manual Testing
 

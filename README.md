@@ -1,6 +1,6 @@
 # Pawse - Introduction
 
-<!-- Image with responsive screenshot here -->
+![Pawse Responsive image](static/docs/pawse-responsive.png)
 
 Pawse is a full-stack website project for a cat cafe. 
 
@@ -8,7 +8,7 @@ It is a remake of the HTML & CSS only website ["In the Meowment"](https://hashta
 
 This project was made from scratch, only taking the idea of the previous cat cafe website and fleshing it out from the ground up. 
 
-<!-- Link to live site -->
+[Pawse Live Site](https://pawse-4504aa9c3705.herokuapp.com/)
 
 ## Table of Contents
 
@@ -29,14 +29,12 @@ This project was made from scratch, only taking the idea of the previous cat caf
     - [Future Features](#future-features)
   - [Technologies](#technologies)
     - [Languages](#languages)
-    - [Frameworks](#frameworks)
-    - [Modules/Packages](#modulespackages)
+    - [Frameworks \& Libraries](#frameworks--libraries)
     - [Other Tools](#other-tools)
   - [Testing \& Validation](#testing--validation)
   - [Deployment \& Development](#deployment--development)
     - [Deployment on Heroku](#deployment-on-heroku)
-    - [Forking the Repository](#forking-the-repository)
-    - [Cloning the Repository](#cloning-the-repository)
+    - [Local Deployment](#local-deployment)
   - [Credits](#credits)
     - [Media](#media)
     - [Code](#code)
@@ -74,8 +72,10 @@ This project was made from scratch, only taking the idea of the previous cat caf
 |                                        | As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong        |
 | Site Owner Features                    | As a site owner, I want the site to be visually pleasing so that users like to come back/share it                                     |
 
-
-<!-- Add section about target audience -->
+The target audience for the site consists of people 13 and above who want to meet cats and have a drink and/or some food.
+Parts of the target audience may want to meet cats outside of their home because they can't have cats of their own.
+Other parts of the target audience may want to meet cats they can adopt.
+And even other parts may just want to hang out with cats and friends. 
 
 ### Structure: Site flow
 
@@ -162,18 +162,47 @@ The logo design is based on the name of the cafe, which is a pun made of paws of
 
 The Entity Relationship Diagram shows the basic structure of the database.
 
-![ERD](static/docs/pawse-erd.png)
+During development, the entities and their fields were changed based on the needs that came up. 
 
-The User model is provided by Django and extended with a UserRole model. 
+Here is the initial ERD:
 
-The MenuCategory and MenuItem models are utilized to display the menu list divided by category and holds information about the price of the different items as well. 
+![ERD](static/docs/pawse-erd-old.png)
+
+And here is the updated version, reflecting the current state of the models:
+
+![ERD new](static/docs/pawse-erd-new.png)
+
+The User model is provided by Django.
+
+The MenuCategory and MenuItem models are utilized to display the menu list divided by category and holds information about the price of the different items as well. An update made during development was to add in an the "order" field on the MenuCategory model, which is used to display the categories in a specified order on the website. 
 
 The Cat model is used to store all relevant information about the cats of the cafe, including the name, date of birth, description and an image of the cat. Additionally, the Application model holds information about any application sent in by the users for any cats. 
 
+The Cat model was updated during development to include a slug field, which was needed to display the correct application. 
 
 ## Agile Development
 
-<!-- Add info about sprints -->
+The project was planned and carried out using Agile methodologies. The tool used for this was GitHub Issues. 
+
+[Kanban boards](https://github.com/users/hashtag-squirrel/projects/2) were set up to track tickets through statuses Backlog, Todo, In Progress and Done. 
+
+Two boards were set up: [A Task/User Story board](https://github.com/users/hashtag-squirrel/projects/2/views/1) and an [Epic board](https://github.com/users/hashtag-squirrel/projects/2/views/4). This was done to keep track of the different types of issues separately. 
+
+When planning out the User Stories, they were grouped into Epics and all were created as issues in GitHub Issues using custom templates. The Tasks and User Stories were linked to the Epics as needed. Tasks were created for features that were not covered by User Stories, but needed for the project, e.g. the planning of the project and the general setup, as well as polishing/bug fixing tickets later on in the project. 
+
+The Epics and their related tickets were split up into several [Milestones](https://github.com/hashtag-squirrel/pawse/milestones?state=closed), which represented approximately one week long sprints. Initially, I planned eight sprints, but condensed the last three milestones into one big milestone lasting for more than one week. There was also a phase at the end of Sprint 5 where I went back to the planning board and planned out the remaining tickets for the last milestone. 
+
+In order to keep best track over the time needed for the tickets, I created a [Roadmap](https://github.com/users/hashtag-squirrel/projects/2/views/2?groupedBy%5BcolumnId%5D=Milestone) displaying the milestones and their respective tickets, which is shown here:
+
+![Roadmap](static/docs/agile-roadmap.png)
+
+At the start of every sprint, I checked the tickets belonging to the respective milestone and added Acceptance Criteria for every ticket, as well as an estimate in Story Points. I also made sure that every ticket was prioritized according to MoSCoW prioritization and tagged appropriately. 
+
+The goal of the planning was to even out the work I had to do over all sprints and when I generated a chart with Story Points per Sprint, I can see that it worked out quite well. Sprint 6 was expected to have more storypoints since it lasted about twice as long as other sprints. 
+
+![Story Point Chart](static/docs/agile-storypoint-chart.png)
+
+I also checked that each sprint had no more than 40% of tickets that were categorized as anything else than must-haves. 
 
 ## Features
 
@@ -194,25 +223,74 @@ Authenticated user features:
 - Add/Edit/Delete interest in cat
 - My Account page
 
-Site Admin features:
-- Add/Edit/Delete Menu items/sections
-- Add/Edit/Delete Cats
+
 
 ### Future Features
 
-<!-- Add future features -->
+Additionally to more content that could be added to the existing pages, there are many features that can be added to flesh out the project. Here is a list of potential features that can be added with varying amounts of work:
+
+Unauthenticated User features:
+- Adding an Articles page where information about the cats/cafe/news can be shared
+- A gallery with more impressions of the cafe
+
+Authenticated User features:
+- An Account overview page
+- The possibility to delete one's own account
+- Adding comments on the cats
+- Adding testimonials after a visit
+- A booking system for visits
+- A messaging system to discuss details/status of applications
+
+Site Admin features in the UI:
+- Add/Edit/Delete Menu items/sections
+- Add/Edit/Delete Cats
 
 ## Technologies
 
 ### Languages
 
-### Frameworks
+- HTML5
+- CSS3
+- JavaScript
+- Python 3.11
 
-### Modules/Packages
+### Frameworks & Libraries
+
+- Bootstrap v5.2
+- Django v3.2
+
+Django libraries:
+
+- gunicorn 
+- dj-database-url
+- psycopg2 
+- dj3-cloudinary-storage
+- urllib3
+- pillow
+- django-allauth
+- django-autoslug
+- django-crispy-forms
+- crispy-bootstrap5
+- django-active-link
+
+Test coverage:
+- coverage
+
+To create a virtual environment:
+- pipenv
 
 ### Other Tools
 
-[RGB to Hex converter](https://www.rgbtohex.net/)
+- Git - used for version control
+- GitHub - used for online storage of codebase and GitHub Issues tool
+- VS Code - used as the coding editor of choice
+- Balsamiq - for creation of the wireframes
+- Lucidchart - used to create diagrams
+- ElephantSQL - used to host the PostgreSQL database
+- Cloudinary - as static file storage
+- Heroku - used to host the application
+- WAVE - to evaluate the accessibility of the site.
+- [RGB to Hex converter](https://www.rgbtohex.net/) - to convert color codes
 
 ## Testing & Validation
 
@@ -222,9 +300,34 @@ All testing and validation is documented in [TESTING.md](TESTING.md)
 
 ### Deployment on Heroku
 
-### Forking the Repository
+1. Login to the Heroku dashboard and create a new app.
+2. Navigate to Settings and add the Python Buildpack
+3. Set environment variables in the Config Vars section of the Settings tab.
+   - You need to define the following variables:
+     - `DATABASE_URL` - `<Your Postgres URL>`
+     - `CLOUDINARY_URL` - `<Your Cloudinary URL>`
+     - `SECRET_KEY` - `<Your Secret Key>`
+4. Connect your GitHub repository to your Heroku app.
+5. In the Deploy tab, enable automatic deploys from your GitHub repository using the "main" branch.
+6. Click the "Deploy Branch" button to deploy the "main" branch.
+7. Once the app has been deployed, click the "View App" button to view the app.
 
-### Cloning the Repository
+### Local Deployment
+
+1. Clone the repository from GitHub by clicking the "Code" button and copying the URL.
+2. Open your preferred IDE and open a terminal session in the directory you want to clone the repository to.
+3. Type `git clone` followed by the URL you copied in step 1 and press enter.
+4. Create a virtual environment typing `pipenv shell` in your terminal
+5. Install the required dependencies specified in the Pipfile by typing `pipenv install` in the terminal.
+6. Note: The project is setup to use environment variables. You will need to set these up in your local environment.
+  - For local deployment, you will need to create an `env.py` file in the root directory of the project and set the environment variables in this file as follows:
+    - `os.environ['DATABASE_URL'] = '<Your Postgres URL>'`
+    - `os.environ['SECRET_KEY'] = '<Your Secret Key>'`
+    - `os.environ['CLOUDINARY_URL'] = '<Your Cloudinary URL>'`
+    - `os.environ["DEBUG"] = 'DEBUG'`
+7. Connect your database of choice and run the migrations by typing `python manage.py migrate` in the terminal.
+8. Create a superuser by typing `python manage.py createsuperuser` in the terminal and following the prompts.
+9.  Run the app by typing `python manage.py runserver` in the terminal and opening the URL in your browser.
 
 ## Credits
 
