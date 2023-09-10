@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         let messages = document.getElementById('msg');
         if (messages === null) {
-            return
+            return;
         }
         let alert = new bootstrap.Alert(messages);
         alert.close();

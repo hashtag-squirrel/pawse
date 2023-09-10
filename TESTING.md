@@ -1,10 +1,10 @@
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-  - [Responsiveness Testing](#responsiveness-testing)
-  - [Browser Compatibility Testing](#browser-compatibility-testing)
-  - [Bug Testing](#bug-testing)
   - [Lighthouse Testing](#lighthouse-testing)
+    - [Desktop](#desktop)
+    - [Mobile](#mobile)
+  - [WAVE Accessibility Testing](#wave-accessibility-testing)
   - [Code Valitation](#code-valitation)
     - [HTML Validation](#html-validation)
       - [Landing page](#landing-page)
@@ -19,17 +19,128 @@
       - [Pages App](#pages-app)
       - [Menu App](#menu-app)
       - [Cats App](#cats-app)
-  - [User Story Testing](#user-story-testing)
-  - [Feature Testing](#feature-testing)
   - [Automated Testing](#automated-testing)
-
-## Responsiveness Testing
-
-## Browser Compatibility Testing
-
-## Bug Testing
+  - [Manual Testing](#manual-testing)
+    - [UX Testing](#ux-testing)
+    - [Responsiveness Testing](#responsiveness-testing)
+      - [Developer Tools Testing](#developer-tools-testing)
+      - [Device Testing](#device-testing)
+    - [Browser Compatibility Testing](#browser-compatibility-testing)
+    - [User Story Testing](#user-story-testing)
+    - [Feature Testing](#feature-testing)
 
 ## Lighthouse Testing
+
+All pages of the website were tested using the [Lighthouse tool](https://developer.chrome.com/docs/lighthouse/overview/) in Chrome Developer Tools. The testing was done in an incognito browser for best performance. 
+
+Both mobile and desktop performance was checked. The goal was to score 100 on Accessibility, Best Practices and SEO, and to have high scores for Performance where possible. 
+For some pages, the score for SEO went down to 97/98 on mobile, which was due to insufficient spacing around the Social Media links in the footer. Since this did not persist for all pages and it wasn't an issue on Desktop at all, I did not fix it.
+
+Initial Lighthouse runs showed a few issues with color contrasts and wrong headers, as well as one TypeError caused by Bootstrap on the alert message in my custom JavaScript. All of these issues were fixed and subsequent runs of Lighthouse showed high scores as expected. 
+
+### Desktop
+
+Landing Page:
+
+![Landing Page](static/docs/lighthouse-validation/landing-desktop.png)
+
+Menu Page:
+
+![Menu Page](static/docs/lighthouse-validation/menu-desktop.png)
+
+Cats Page:
+
+- Unauthenticated:
+
+![Cats Page Unauthenticated](static/docs/lighthouse-validation/cats-desktop-u.png)
+
+- Authenticated:
+
+![Cats Page Authenticated](static/docs/lighthouse-validation/cats-desktop-a.png)
+
+Application Pages:
+
+- Create Application:
+
+![Create Application](static/docs/lighthouse-validation/application-desktop.png)
+
+- Edit Application:
+
+![Edit Application](static/docs/lighthouse-validation/application-edit-desktop.png)
+
+- Delete Application:
+
+![Delete Application](static/docs/lighthouse-validation/application-delete-desktop.png)
+
+Account Pages:
+
+- Register
+
+![Register](static/docs/lighthouse-validation/register-desktop.png)
+
+- Login
+
+![Login](static/docs/lighthouse-validation/login-desktop.png)
+
+- Logout
+
+![Logout](static/docs/lighthouse-validation/logout-desktop.png)
+
+### Mobile
+
+Landing Page:
+
+![Landing Page](static/docs/lighthouse-validation/landing-mobile.png)
+
+Menu Page:
+
+![Menu Page](static/docs/lighthouse-validation/menu-mobile.png)
+
+Cats Page:
+
+- Unauthenticated:
+
+![Cats Page Unauthenticated](static/docs/lighthouse-validation/cats-mobile-u.png)
+
+- Authenticated:
+
+![Cats Page Authenticated](static/docs/lighthouse-validation/cats-mobile-a.png)
+
+Application Pages:
+
+- Create Application:
+
+![Create Application](static/docs/lighthouse-validation/application-mobile.png)
+
+- Edit Application:
+
+![Edit Application](static/docs/lighthouse-validation/application-edit-mobile.png)
+
+- Delete Application:
+
+![Delete Application](static/docs/lighthouse-validation/application-delete-mobile.png)
+
+Account Pages:
+
+- Register
+
+![Register](static/docs/lighthouse-validation/register-mobile.png)
+
+- Login
+
+![Login](static/docs/lighthouse-validation/login-mobile.png)
+
+- Logout
+
+![Logout](static/docs/lighthouse-validation/logout-mobile.png)
+
+## WAVE Accessibility Testing
+
+The site was tested using the [WAVE web accessibility evaluation tool](https://wave.webaim.org/). 
+
+The result showed no errors. One of the two alerts is for a redundant link (the Pawse logo leading to the landing page, as well as the Pawse text leading to the landing page right next to it). The other alert points out the HTML5 video on the landing page.
+
+![WAVE results](static/docs/wave-validation.png)
 
 ## Code Valitation
 
@@ -112,7 +223,100 @@ admin.py and models.py were not used.
 
 On urls.py the `noqa` tag was used on the line importing the views, since I deemed it less readable if I split this up on several lines.
 
-## User Story Testing
+## Automated Testing
+
+Unit tests were written for all three apps (pages, menu and cats) to ensure that no bugs were missed. 
+
+Almost all statements were tested with few exceptions.
+
+The test coverage for the apps is as follows:
+
+![Test Coverage](static/docs/coverage.png)
+
+## Manual Testing
+
+While manual testing tends to take up a lot of time compared to automated testing, the site also underwent a comprehensive suit of manual testing to ensure that it works as expected.
+
+One big advantage of manual testing is that one can test the actual User Experience of the site, which cannot be tested using automated tests, since it is somewhat subjective how a user judges the experience. 
+
+Additionally, the manual testing approach ensures an end-to-end integrated testing of the application features and the actual database instead of testing single code statements.
+
+### UX Testing
+
+The site was shared with friends and family during different stages of development and feedback was collected and implemented continuously. 
+
+Examples for feedback that came up during UX testing: 
+
+- The hero image on the home page felt not engaging enough and it was suggested to have something moving, which led to the image being replaced by a video
+  - This also led to the zoom effect on the Cats page being implemented, to make it more dynamic
+- The login, register and logout were tested by most users and deemed very intuitive and easy, as well as functional
+- The site was judged to be navigated easily
+- The design was judged to be pleasant
+
+### Responsiveness Testing
+
+The site was tested continuously on different screen sizes using both Chrome Developer Tools, as well as mobile devices. 
+
+Sometimes, the landing page would show a margin on the right side on mobile devices, both in Chrome Developer Tools as well as on actual devices. This was not consistently reproducible and happened on different kinds of devices and the root cause for it happening remains unknown. Usually, reloading the page would fix this. 
+Since this was not reproducible and happened across all devices, I did not put it down as an issue of the testing itself. 
+
+The page was tested in the following way on all devices listed below:
+
+- Navigated to every page using the nav bar/hamburger menu
+- Scrolled over every page and checked that all parts are rendered correctly
+- Logged in/logged out of the page on every device
+- Checked that logging in/out redirects to the previous page
+- Clicked on buttons on cat page to create/edit/delete applications
+- Created/edited/deleted applications
+- Checked that alert messages show up correctly and disappear automatically
+- Checked that form validation works
+- Checked that autoplay on hero video works
+- Checked that zoom on Cats page works
+
+#### Developer Tools Testing
+
+iPhone 5/SE: All features tested, no issues
+
+iPhone 12 Pro: All features tested, no issues
+
+Samsung Galaxy S8+: All features tested, no issues
+
+iPad Air: All features tested, no issues
+
+#### Device Testing
+
+iPhone 12 Pro: All features tested, no issues
+
+iPhone 14 Pro: All features tested, no issues
+
+iPad mini: All features tested, no issues
+
+### Browser Compatibility Testing
+
+Browser compatibility testing was done on desktop only. 
+
+The page was tested in the following way on all browsers listed below:
+
+- Navigated to every page using the nav bar/hamburger menu
+- Scrolled over every page and checked that all parts are rendered correctly
+- Logged in/logged out of the page on every device
+- Checked that logging in/out redirects to the previous page
+- Clicked on buttons on cat page to create/edit/delete applications
+- Created/edited/deleted applications
+- Checked that alert messages show up correctly and disappear automatically
+- Checked that form validation works
+- Checked that the hover effect on links works
+- Checked that autoplay on hero video works
+- Checked that zoom on Cats page works
+
+Browsers:
+
+- Chrome: All features tested, no issues
+- Safari: All features tested, no issues
+- Firefox: All features tested, no issues
+- Edge: All features tested, no issues
+
+### User Story Testing
 
 | **Epic**                               | **User Story**                                                                                                                        | Testing Method & Expected Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Result                                                                                     | Comment |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|---------|
@@ -142,12 +346,5 @@ On urls.py the `noqa` tag was used on the line importing the views, since I deem
 |                                        | As an authenticated user/site admin I want to be asked to confirm deletion so that I don't accidentally delete something wrong        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                            |         |
 | Site Owner Features                    | As a site owner, I want the site to be visually pleasing so that users like to come back/share it                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                            |         |
 
-## Feature Testing
+### Feature Testing
 
-## Automated Testing
-
-Automated tests were written for all three apps: pages, menu and cats. 
-
-The coverage for these apps is as follows:
-
-![Test Coverage](static/docs/coverage.png)

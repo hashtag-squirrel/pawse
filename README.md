@@ -216,7 +216,7 @@ Site Admin features:
 
 ## Testing & Validation
 
-<!-- Add content in TESTING.md -->
+All testing and validation is documented in [TESTING.md](TESTING.md)
 
 ## Deployment & Development
 

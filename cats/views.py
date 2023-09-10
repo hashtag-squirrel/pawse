@@ -1,4 +1,4 @@
-from django.shortcuts import reverse, HttpResponseRedirect 
+from django.shortcuts import reverse, HttpResponseRedirect
 from django.views import generic
 from .models import Cat, CatApplication
 from django.utils.decorators import method_decorator
