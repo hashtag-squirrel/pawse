@@ -5,6 +5,10 @@ from menu.models import MenuCategory, MenuItem
 
 
 class MenuView(generic.ListView):
+    """
+    Displays all objects of the MenuCategory Model
+    Displays all MenuItem objects as well
+    """
 
     model = MenuCategory
     categories = MenuCategory.objects.all()

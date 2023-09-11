@@ -6,6 +6,9 @@ from .models import Cat, CatApplication
 
 @admin.register(Cat)
 class CatAdmin(admin.ModelAdmin):
+    """
+    Register the Cat Model in the Admin area
+    """
     list_display = (
         'pk',
         'name',
@@ -18,4 +21,7 @@ class CatAdmin(admin.ModelAdmin):
 
 @admin.register(CatApplication)
 class CatApplicationAdmin(admin.ModelAdmin):
+    """
+    Register the CatApplication Model in the Admin area
+    """
     list_display = ('pk', 'user', 'cat', 'application_text',)

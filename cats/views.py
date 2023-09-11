@@ -7,6 +7,10 @@ from django.contrib import messages
 
 
 class CatsView(generic.ListView):
+    """
+    Displays all objects of the Cat Model
+    Displays all cat applications the specific user has
+    """
 
     model = Cat
     context_object_name = 'cats'
@@ -21,6 +25,11 @@ class CatsView(generic.ListView):
 
 @method_decorator(login_required, name='dispatch')
 class CatApplicationView(generic.CreateView):
+    """
+    Allows authenticated users to create and save a cat application
+    validates whether the user already has an application for that cat
+    Redirects the user to the Cats page
+    """
 
     model = CatApplication
 
@@ -53,6 +62,10 @@ class CatApplicationView(generic.CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class CatApplicationEditView(generic.UpdateView):
+    """
+    Allows authenticated users to update and save a cat application
+    Redirects the user to the Cats page
+    """
 
     model = CatApplication
     context_object_name = 'application'
@@ -71,6 +84,10 @@ class CatApplicationEditView(generic.UpdateView):
 
 @method_decorator(login_required, name='dispatch')
 class CatApplicationDeleteView(generic.DeleteView):
+    """
+    Allows authenticated users to delete a cat application
+    Redirects the user to the Cats page
+    """
 
     model = CatApplication
     context_object_name = 'application'

@@ -4,6 +4,11 @@ from django.db import models
 
 
 class MenuCategory(models.Model):
+    """
+    MenuCategory Model
+    used to categorize MenuItems
+    Sorted by the 'order' field
+    """
 
     name = models.CharField(max_length=30, unique=True)
     order = models.IntegerField(unique=True)
@@ -16,6 +21,9 @@ class MenuCategory(models.Model):
 
 
 class MenuItem(models.Model):
+    """
+    MenuItem Model
+    """
 
     name = models.CharField(max_length=50)
     category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE,

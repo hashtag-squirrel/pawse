@@ -5,6 +5,10 @@ from autoslug import AutoSlugField
 
 
 class Cat(models.Model):
+    """
+    Cat Model
+    contains all information about each cat, including an image
+    """
 
     name = models.CharField(max_length=50)
     date_of_birth = models.DateField()
@@ -23,7 +27,9 @@ class Cat(models.Model):
         return self.name
 
     def get_age(self):
-        """Calculates the age from date of birth"""
+        """
+        Method which calculates the age from date of birth
+        """
         age = datetime.date.today()-self.date_of_birth
 
         number_of_days = int((age).days)
@@ -40,10 +46,17 @@ class Cat(models.Model):
         return f'{years} years, {months} months and {days} days old'
 
     def number_of_applications(self):
+        """
+        Returns the number of applications for a cat
+        """
         return self.applications.count()
 
 
 class CatApplication(models.Model):
+    """
+    CatApplication Model
+    used as a helper model for the ManyToMany Relationship from Cat to User
+    """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     cat = models.ForeignKey(Cat, on_delete=models.CASCADE)

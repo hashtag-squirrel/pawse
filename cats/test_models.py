@@ -5,6 +5,9 @@ from datetime import date, timedelta
 
 # Create your tests here
 class TestCatModels(TestCase):
+    """
+    Unit tests for the Cat Model and Cat Application Model
+    """
 
     def setUp(self):
         # Initialize and login a test user

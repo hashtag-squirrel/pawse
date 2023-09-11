@@ -4,6 +4,9 @@ from .models import MenuCategory, MenuItem
 
 # Create your tests here.
 class TestMenuModels(TestCase):
+    """
+    Unit tests for the MenuItem and MenuCategory models
+    """
 
     def test_category_string_method_returns_name(self):
         category = MenuCategory.objects.create(name='Test Category', order=1)

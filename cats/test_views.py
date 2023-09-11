@@ -5,6 +5,9 @@ from datetime import date
 
 # Create your tests here.
 class TestCatsViews(TestCase):
+    """
+    Unit tests for the Cat views
+    """
 
     def setUp(self):
         # Initialize and login a test user
