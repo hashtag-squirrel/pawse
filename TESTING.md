@@ -45,97 +45,97 @@ Initial Lighthouse runs showed a few issues with color contrasts and wrong heade
 
 Landing Page:
 
-![Landing Page](static/docs/lighthouse-validation/landing-desktop.png)
+![Landing Page](docs/lighthouse-validation/landing-desktop.png)
 
 Menu Page:
 
-![Menu Page](static/docs/lighthouse-validation/menu-desktop.png)
+![Menu Page](docs/lighthouse-validation/menu-desktop.png)
 
 Cats Page:
 
 - Unauthenticated:
 
-![Cats Page Unauthenticated](static/docs/lighthouse-validation/cats-desktop-u.png)
+![Cats Page Unauthenticated](docs/lighthouse-validation/cats-desktop-u.png)
 
 - Authenticated:
 
-![Cats Page Authenticated](static/docs/lighthouse-validation/cats-desktop-a.png)
+![Cats Page Authenticated](docs/lighthouse-validation/cats-desktop-a.png)
 
 Application Pages:
 
 - Create Application:
 
-![Create Application](static/docs/lighthouse-validation/application-desktop.png)
+![Create Application](docs/lighthouse-validation/application-desktop.png)
 
 - Edit Application:
 
-![Edit Application](static/docs/lighthouse-validation/application-edit-desktop.png)
+![Edit Application](docs/lighthouse-validation/application-edit-desktop.png)
 
 - Delete Application:
 
-![Delete Application](static/docs/lighthouse-validation/application-delete-desktop.png)
+![Delete Application](docs/lighthouse-validation/application-delete-desktop.png)
 
 Account Pages:
 
 - Register
 
-![Register](static/docs/lighthouse-validation/register-desktop.png)
+![Register](docs/lighthouse-validation/register-desktop.png)
 
 - Login
 
-![Login](static/docs/lighthouse-validation/login-desktop.png)
+![Login](docs/lighthouse-validation/login-desktop.png)
 
 - Logout
 
-![Logout](static/docs/lighthouse-validation/logout-desktop.png)
+![Logout](docs/lighthouse-validation/logout-desktop.png)
 
 ### Mobile
 
 Landing Page:
 
-![Landing Page](static/docs/lighthouse-validation/landing-mobile.png)
+![Landing Page](docs/lighthouse-validation/landing-mobile.png)
 
 Menu Page:
 
-![Menu Page](static/docs/lighthouse-validation/menu-mobile.png)
+![Menu Page](docs/lighthouse-validation/menu-mobile.png)
 
 Cats Page:
 
 - Unauthenticated:
 
-![Cats Page Unauthenticated](static/docs/lighthouse-validation/cats-mobile-u.png)
+![Cats Page Unauthenticated](docs/lighthouse-validation/cats-mobile-u.png)
 
 - Authenticated:
 
-![Cats Page Authenticated](static/docs/lighthouse-validation/cats-mobile-a.png)
+![Cats Page Authenticated](docs/lighthouse-validation/cats-mobile-a.png)
 
 Application Pages:
 
 - Create Application:
 
-![Create Application](static/docs/lighthouse-validation/application-mobile.png)
+![Create Application](docs/lighthouse-validation/application-mobile.png)
 
 - Edit Application:
 
-![Edit Application](static/docs/lighthouse-validation/application-edit-mobile.png)
+![Edit Application](docs/lighthouse-validation/application-edit-mobile.png)
 
 - Delete Application:
 
-![Delete Application](static/docs/lighthouse-validation/application-delete-mobile.png)
+![Delete Application](docs/lighthouse-validation/application-delete-mobile.png)
 
 Account Pages:
 
 - Register
 
-![Register](static/docs/lighthouse-validation/register-mobile.png)
+![Register](docs/lighthouse-validation/register-mobile.png)
 
 - Login
 
-![Login](static/docs/lighthouse-validation/login-mobile.png)
+![Login](docs/lighthouse-validation/login-mobile.png)
 
 - Logout
 
-![Logout](static/docs/lighthouse-validation/logout-mobile.png)
+![Logout](docs/lighthouse-validation/logout-mobile.png)
 
 ## WAVE Accessibility Testing
 
@@ -143,7 +143,7 @@ The site was tested using the [WAVE web accessibility evaluation tool](https://w
 
 The result showed no errors. One of the two alerts is for a redundant link (the Pawse logo leading to the landing page, as well as the Pawse text leading to the landing page right next to it). The other alert points out the HTML5 video on the landing page.
 
-![WAVE results](static/docs/wave-validation.png)
+![WAVE results](docs/wave-validation.png)
 
 ## Code Valitation
 
@@ -154,7 +154,7 @@ Since parts of the pages are generated server-side, the pages were checked using
 
 At first, several pages had a couple of errors and warnings, but all errors and warnings were fixed until the checker showed none for every page as seen in below image:
 
-![HTML validation](static/docs/html-validation.png)
+![HTML validation](docs/html-validation.png)
 
 #### Landing page
 The landing page showed an error with a missing div end tag. The tag was identified and added. 
@@ -180,13 +180,13 @@ These all showed the same warning that the trailing slash on self-closing tags d
 
 CSS was validated using the [Jigsaw validator from W3C](https://jigsaw.w3.org/css-validator/validator). No errors were found.
 
-![CSS validation](static/docs/css-validation.png)
+![CSS validation](docs/css-validation.png)
 
 ### JavaScript Validation
 
 The custom JavaScript was validated using [JSHint](https://jshint.com/) which showed no errors. 
 
-![JS validation](static/docs/js-validation.png)
+![JS validation](docs/js-validation.png)
 
 ### Python Validation
 
@@ -196,33 +196,33 @@ No errors came up for any of the files. Click on the links below to see screensh
 
 #### Pawse Project
 
-- [urls.py](static/docs/python-validation/pawse-urls.png)
+- [urls.py](docs/python-validation/pawse-urls.png)
 
 #### Pages App
 
-- [test_views.py](static/docs/python-validation/pages-test-views.png)
-- [urls.py](static/docs/python-validation/pages-urls.png)
-- [views.py](static/docs/python-validation/pages-views.png)
+- [test_views.py](docs/python-validation/pages-test-views.png)
+- [urls.py](docs/python-validation/pages-urls.png)
+- [views.py](docs/python-validation/pages-views.png)
 
 admin.py and models.py were not used.
 
 #### Menu App
 
-- [admin.py](static/docs/python-validation/menu-admin.png)
-- [models.py](static/docs/python-validation/menu-models.png)
-- [test_models.py](static/docs/python-validation/menu-test-models.png)
-- [test_views.py](static/docs/python-validation/menu-test-views.png)
-- [urls.py](static/docs/python-validation/menu-urls.png)
-- [views.py](static/docs/python-validation/menu-views.png)
+- [admin.py](docs/python-validation/menu-admin.png)
+- [models.py](docs/python-validation/menu-models.png)
+- [test_models.py](docs/python-validation/menu-test-models.png)
+- [test_views.py](docs/python-validation/menu-test-views.png)
+- [urls.py](docs/python-validation/menu-urls.png)
+- [views.py](docs/python-validation/menu-views.png)
 
 #### Cats App
 
-- [admin.py](static/docs/python-validation/cats-admin.png)
-- [models.py](static/docs/python-validation/cats-models.png)
-- [test_models.py](static/docs/python-validation/cats-test-models.png)
-- [test_views.py](static/docs/python-validation/cats-test-views.png)
-- [urls.py](static/docs/python-validation/cats-urls.png)
-- [views.py](static/docs/python-validation/cats-views.png)
+- [admin.py](docs/python-validation/cats-admin.png)
+- [models.py](docs/python-validation/cats-models.png)
+- [test_models.py](docs/python-validation/cats-test-models.png)
+- [test_views.py](docs/python-validation/cats-test-views.png)
+- [urls.py](docs/python-validation/cats-urls.png)
+- [views.py](docs/python-validation/cats-views.png)
 
 On urls.py the `noqa` tag was used on the line importing the views, since I deemed it less readable if I split this up on several lines.
 
@@ -234,13 +234,13 @@ Almost all statements were tested with few exceptions.
 
 The test coverage for the apps is as follows:
 
-![Test Coverage](static/docs/coverage.png)
+![Test Coverage](docs/coverage.png)
 
 ### Running the Automated Tests
 
 In order to run the automated tests, you need to adjust your DATABASES in settings.py in the following way: 
 
-```
+```python
 if DEBUG:
     DATABASES = {
         'default': {

@@ -1,6 +1,6 @@
 # Pawse - Introduction
 
-![Pawse Responsive image](static/docs/pawse-responsive.png)
+![Pawse Responsive image](docs/pawse-responsive.png)
 
 Pawse is a full-stack website project for a cat cafe. 
 
@@ -22,10 +22,16 @@ This project was made from scratch, only taking the idea of the previous cat caf
       - [Colors](#colors)
       - [Fonts](#fonts)
       - [Logo](#logo)
+      - [Background image](#background-image)
   - [Database Design](#database-design)
   - [Agile Development](#agile-development)
   - [Features](#features)
     - [Existing Features](#existing-features)
+      - [General](#general)
+      - [Apps](#apps)
+      - [CRUD](#crud)
+      - [User Feedback](#user-feedback)
+      - [Custom Error Pages](#custom-error-pages)
     - [Future Features](#future-features)
   - [Technologies](#technologies)
     - [Languages](#languages)
@@ -85,7 +91,7 @@ Additional functionalities can be accessed from the nav bar or as subpages, depe
 
 This sitemap chart shows the high-level flow of the site: 
 
-![Sitemap](static/docs/pawse-sitemap.png)
+![Sitemap](docs/pawse-sitemap.png)
 
 ### Skeleton: Wireframes
 
@@ -95,39 +101,39 @@ The wireframes for the different pages can be divided into unauthenticated users
 
 | **Page Version**                  | **Mobile**              | **Desktop**                   |
 |-----------------------------------|-------------------------|-------------------------------|
-| Unauthenticated                   | ![Home Mobile](static/docs/mobile-u-landing.png) | ![Home Desktop](static/docs/desktop-u-landing.png) |
-| Unauthenticated - nav expanded | ![Home Nav Expanded Mobile](static/docs/mobile-u-landing-nav-expanded.png) | ![Home Nav Expanded Desktop](static/docs/desktop-u-landing-nav-expanded.png)  |
-| Authenticated                     | Same as unauthenticated | ![Home A Desktop](static/docs/desktop-a-landing.png) |
-| Authenticated - nav expanded   | ![Home A Nav Expanded Mobile](static/docs/mobile-a-landing-nav-expanded.png) | Same as Unauthenticated with nav expanded, but with Authenticated nav bar options |
+| Unauthenticated                   | ![Home Mobile](docs/mobile-u-landing.png) | ![Home Desktop](docs/desktop-u-landing.png) |
+| Unauthenticated - nav expanded | ![Home Nav Expanded Mobile](docs/mobile-u-landing-nav-expanded.png) | ![Home Nav Expanded Desktop](docs/desktop-u-landing-nav-expanded.png)  |
+| Authenticated                     | Same as unauthenticated | ![Home A Desktop](docs/desktop-a-landing.png) |
+| Authenticated - nav expanded   | ![Home A Nav Expanded Mobile](docs/mobile-a-landing-nav-expanded.png) | Same as Unauthenticated with nav expanded, but with Authenticated nav bar options |
 | Site Admin                        | Same version as authenticated | Same version as authenticated |
 
 2. Menu
 
 | **Page Version**       | **Mobile**              | **Desktop**             |
 |------------------------|-------------------------|-------------------------|
-| Unauthenticated        | ![Menu Mobile](static/docs/mobile-u-menu-list.png) | ![Menu Desktop](static/docs/desktop-u-menu-list.png) |
+| Unauthenticated        | ![Menu Mobile](docs/mobile-u-menu-list.png) | ![Menu Desktop](docs/desktop-u-menu-list.png) |
 | Authenticated          | Same as unauthenticated | Same as unauthenticated |
-| Site Admin             | N/A                     | ![Menu S Desktop](static/docs/desktop-s-menu-list.png) |
-| Site Admin - Add/Edit Menu Item     | N/A                     | ![Add Menu Item Desktop](static/docs/desktop-s-add-edit-menu-item.png) |
-| Site Admin - Add/Edit Menu Category | N/A                     | ![Add Category Desktop](static/docs/desktop-s-add-menu-category.png) |
+| Site Admin             | N/A                     | ![Menu S Desktop](docs/desktop-s-menu-list.png) |
+| Site Admin - Add/Edit Menu Item     | N/A                     | ![Add Menu Item Desktop](docs/desktop-s-add-edit-menu-item.png) |
+| Site Admin - Add/Edit Menu Category | N/A                     | ![Add Category Desktop](docs/desktop-s-add-menu-category.png) |
 
 3. Cats
 
 | **Page Version**               | **Mobile** | **Desktop** |
 |--------------------------------|------------|-------------|
-| Unauthenticated                | ![Cats Mobile](static/docs/mobile-u-cats.png) | ![Cats Desktop](static/docs/desktop-u-cats.png) |
-| Authenticated                  | ![Cats A Mobile](static/docs/mobile-a-cats.png) | ![Cats A Desktop](static/docs/desktop-a-cats.png) |
-| Authenticated - added interest | ![Cats added interest Mobile](static/docs/mobile-a-cats-added-interest.png) | ![Cats added interest Desktop](static/docs/desktop-a-cats-added-interest.png) |
-| Site Admin                     | N/A        | ![Cats S Desktop](static/docs/desktop-s-cats.png) |
-| Site Admin - Add/Edit Cat                   | N/A        | ![Add Cat Desktop](static/docs/desktop-s-add-edit-cat.png) |
+| Unauthenticated                | ![Cats Mobile](docs/mobile-u-cats.png) | ![Cats Desktop](docs/desktop-u-cats.png) |
+| Authenticated                  | ![Cats A Mobile](docs/mobile-a-cats.png) | ![Cats A Desktop](docs/desktop-a-cats.png) |
+| Authenticated - added interest | ![Cats added interest Mobile](docs/mobile-a-cats-added-interest.png) | ![Cats added interest Desktop](docs/desktop-a-cats-added-interest.png) |
+| Site Admin                     | N/A        | ![Cats S Desktop](docs/desktop-s-cats.png) |
+| Site Admin - Add/Edit Cat                   | N/A        | ![Add Cat Desktop](docs/desktop-s-add-edit-cat.png) |
 
 4. Sign Up/Sign In/My Account
 
 | **Page Version**               | **Mobile** | **Desktop** |
 |--------------------------------|------------|-------------|
-| Unauthenticated - Sign Up                | ![Sign Up Mobile](static/docs/mobile-u-sign-up.png) | ![Sign Up Desktop](static/docs/desktop-u-sign-up.png) |
-| Unauthenticated - Sign In                | ![Sign In Mobile](static/docs/mobile-u-sign-in.png) | ![Sign In Desktop](static/docs/desktop-u-sign-in.png) |
-| Authenticated - My Account             | ![My Account Mobile](static/docs/mobile-a-my-account.png) | ![My Account Desktop](static/docs/desktop-a-my-account.png) |
+| Unauthenticated - Sign Up                | ![Sign Up Mobile](docs/mobile-u-sign-up.png) | ![Sign Up Desktop](docs/desktop-u-sign-up.png) |
+| Unauthenticated - Sign In                | ![Sign In Mobile](docs/mobile-u-sign-in.png) | ![Sign In Desktop](docs/desktop-u-sign-in.png) |
+| Authenticated - My Account             | ![My Account Mobile](docs/mobile-a-my-account.png) | ![My Account Desktop](docs/desktop-a-my-account.png) |
 
 ### Surface: Visual Design
 
@@ -141,7 +147,7 @@ I tried different color palettes using Coolors.co and first ended up with [this 
 
 I tried [another palette](https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff) from the same site and am much happier with the result:
 
-![Color Scheme](static/docs/pawse-colors.png)
+![Color Scheme](docs/pawse-colors.png)
 
 #### Fonts
 
@@ -157,6 +163,13 @@ The logo design is based on the name of the cafe, which is a pun made of paws of
 
 ![Logo](static/images/logo-highlight.png)
 
+#### Background image
+
+During the design, I felt a simple white background was a little boring, so I decided to add a background image that is playful, but not too distracting from the main content. 
+
+I found a repeating background with differently sized paw prints, which I deemed very fitting. I adjusted the color of the paws to match the light grey of my color palette to make it fit in perfectly. 
+
+Most content is then highlighted by a card directly on the background or by a card contained in a dark blue semi-transparent box to give some contrast. 
 
 ## Database Design
 
@@ -166,11 +179,11 @@ During development, the entities and their fields were changed based on the need
 
 Here is the initial ERD:
 
-![ERD](static/docs/pawse-erd-old.png)
+![ERD](docs/pawse-erd-old.png)
 
 And here is the updated version, reflecting the current state of the models:
 
-![ERD new](static/docs/pawse-erd-new.png)
+![ERD new](docs/pawse-erd-new.png)
 
 The User model is provided by Django.
 
@@ -192,15 +205,24 @@ When planning out the User Stories, they were grouped into Epics and all were cr
 
 The Epics and their related tickets were split up into several [Milestones](https://github.com/hashtag-squirrel/pawse/milestones?state=closed), which represented approximately one week long sprints. Initially, I planned eight sprints, but condensed the last three milestones into one big milestone lasting for more than one week. There was also a phase at the end of Sprint 5 where I went back to the planning board and planned out the remaining tickets for the last milestone. 
 
+| Sprint | Content                                             | Start      | End        |
+|--------|-----------------------------------------------------|------------|------------|
+| 1      | Planning                                            | 2023-07-19 | 2023-07-25 |
+| 2      | Initial Setup, Unauthenticated User Features Part 1 | 2023-07-26 | 2023-08-01 |
+| 3      | Unauthenticated User Features Part 2                | 2023-08-02 | 2023-08-06 |
+| 4      | Authenticated User Features                         | 2023-08-09 | 2023-08-18 |
+| 5      | Site Admin and Site Owner Features                  | 2023-08-18 | 2023-08-23 |
+| 6      | Testing, polishing and bug fixes                    | 2023-08-28 | 2023-09-10 |
+
 In order to keep best track over the time needed for the tickets, I created a [Roadmap](https://github.com/users/hashtag-squirrel/projects/2/views/2?groupedBy%5BcolumnId%5D=Milestone) displaying the milestones and their respective tickets, which is shown here:
 
-![Roadmap](static/docs/agile-roadmap.png)
+![Roadmap](docs/agile-roadmap.png)
 
 At the start of every sprint, I checked the tickets belonging to the respective milestone and added Acceptance Criteria for every ticket, as well as an estimate in Story Points. I also made sure that every ticket was prioritized according to MoSCoW prioritization and tagged appropriately. 
 
 The goal of the planning was to even out the work I had to do over all sprints and when I generated a chart with Story Points per Sprint, I can see that it worked out quite well. Sprint 6 was expected to have more storypoints since it lasted about twice as long as other sprints. 
 
-![Story Point Chart](static/docs/agile-storypoint-chart.png)
+![Story Point Chart](docs/agile-storypoint-chart.png)
 
 I also checked that each sprint had no more than 40% of tickets that were categorized as anything else than must-haves. 
 
@@ -208,22 +230,193 @@ I also checked that each sprint had no more than 40% of tickets that were catego
 
 ### Existing Features
 
-<!-- Add features including screenshots -->
-All user features:
-- Navigation 
+#### General
+
+- Navigation/Header
+
+The Header includes the site logo to instantly make the page recognizable, as well as a simple navigation bar including links to all pages. Depending on whether a user is logged in or not, they see links to Register/Login as an unauthenticated user or a link to Logout as an authenticated user. 
+
+The navigation links are highlighted in the signature yellow color when hovering with the mouse and the active link is highlighted with a darker font color.  
+
+Desktop view:
+
+![Header Desktop Unauthenticated](docs/features/header-desktop-u.png) ![Header Desktop Authenticated](docs/features/header-desktop-a.png)
+
+Desktop view with active link (Pawse) and hovered link (Menu):
+
+![Header Desktop Hover](docs/features/header-desktop-hover.png)
+
+On mobile/smaller screens, the navigation elements switch to a hamburger menu, which shows the same navigation links when clicked on:
+
+![Header Mobile Collapsed](docs/features/header-mobile-collapsed.png) ![Header Mobile Expanded](docs/features/header-mobile-expanded.png)
+
 - Footer
-- Pages:
-  - Home Page
-  - Menu 
-  - Cats - Overview
-  - Cats - Detail
 
-Authenticated user features:
-- Login/Registration
-- Add/Edit/Delete interest in cat
-- My Account page
+The footer contains several different parts. 
 
+The first container includes copyright information, a link to the site providing the background image as well as some social media links. 
 
+The second container includes two disclaimers, firstly about the fictionality of the page and secondly to not provide any personal information in forms. 
+
+Visually, the footer is separated from the main content of the page by a light grey top border and a white background, as opposed to the background image on the main content of the page. The font in the footer is kept in a light grey to not distract from the main content. 
+
+The links in the footer are highlighted the same way as in the header. 
+
+![Footer Desktop](docs/features/footer-desktop.png) 
+
+On mobile screens, the footer elements move to one column:
+
+![Footer Mobile](docs/features/footer-mobile.png)
+
+- Account Pages - Login, Logout Register
+
+The Account pages are all designed in a similar way, with a simple card including a form (Login/Register) or including a confirmation button (Logout). They adhere to the main design of the page and have a bright yellow button on all pages as a pop of color. 
+
+The Registration does not require an email address, because I wanted to avoid collection personal data from users. This is also the reason why there is no option to change the password via a "Forgot Password" link, since this would require an email address. 
+
+![Register](docs/features/account-register.png)
+
+![Login](docs/features/account-login.png)
+
+![Logout](docs/features/account-logout.png)
+
+#### Apps
+
+- Pages App - Landing Page
+
+The Pages App has one view, which is the Landing Page. It is divided into three main sections:
+
+  - Hero video section
+
+The hero video section features a full screen video on autoplay without sound. It is set to respond responsively and is always sized to 100% of the viewport height. 
+The video shows a cat licking its mouth and eating. 
+
+It features some text overlay including a welcome message in the signature yellow and a short description of what Pawse is about. 
+
+![Hero Video](docs/features/home-hero-desktop.png)
+
+The description is shortened on mobile devices in order to not cover too much of the screen.
+
+![Hero Video Mobile](docs/features/home-hero-mobile.png)
+
+  - Testimonials section
+
+The Testimonials section shows a couple of testimonials about the cafe to give visitors a better picture of what the cafe is like and make them more inclined to visit the cafe.
+
+It shows each testimonial on a card as a card group on a dark blue semi-transparent box. Each card has a quote icon in the signature yellow to give a pop of color. 
+
+![Testimonials Desktop](docs/features/home-testimonials-desktop.png)
+
+The section is designed fully responsive and shows two or three cards depending on screen size. To avoid having a layout with two rows with a different number of cards, the tablet sized screen hides the last card. 
+
+![Testimonials Tablet](docs/features/home-testimonials-tablet.png)
+
+On mobile, all three cards are shown again as one column.
+
+![Testimonials Mobile](docs/features/home-testimonials-mobile.png)
+
+  - Find Us section
+
+Lastly, the landing page has a Find Us section. 
+
+It is separated from the testimonials by a 25% width horizontal rule as a visual divider. It has a headline and then features an embedded map which spans the full viewport width. The map has a pointer on Stockholm, since this is the city I live in and the cafe doesn't actually exist. 
+
+![Find Us](docs/features/home-findus-desktop.png)
+
+Below the map, there is a card group on the dark blue semi-transparent box again with Details. The first card features the Contact Details of the cafe and the second card has information that is good to know before a visit. Both cards have a yellow icon on the top left, similar to the testimonials section. 
+
+On Mobile, the cards stack into one column again.
+
+![Find Us Mobile 1](docs/features/home-findus-mobile1.png)
+![Find Us Mobile 2](docs/features/home-findus-mobile2.png)
+
+- Menu App - Menu Page
+
+The Menu App has one view as well, which is the Menu Page. It consists of only one section, which features the dark blue semi-transparent box with a white heading and cards below showing the menu options based on the menu category. The number of cards shown is determined by the number of menu categories the site admin specifies in the backend. 
+
+The menu items show a name highlighted in a darker shade of the yellow for readability, the price and a short description. Menu items can also be managed by the site admin in the backend. 
+
+![Menu Desktop](docs/features/menu-desktop.png)
+
+Depending on the screen size, the number of cards shown in a row changes. On tablets it shows two cards per row:
+
+![Menu Tablet](docs/features/menu-tablet.png)
+
+And on mobile it shows one card per row:
+
+![Menu Mobile](docs/features/menu-mobile.png)
+
+- Cats App - Cats Page, Application Pages
+
+The Cats App has several views. Firstly, it has the Cats Page and the different Application Pages.
+
+For unauthenticated users, the cats page shows one section, which is the cat carousel. 
+
+The carousel has navigation buttons on each side as well as a navigation bar at the bottom. It consists of one card per cat. The card is divided into an image of the cat with a zoom-in effect when navigating to that cat, to give the user a more emotional feeling. Below the image, there is a section with the name, age and description of the cat, as well as an indicator how many applications have come in for that cat. 
+
+Below that is a yellow call to action button to apply to adopt a cat. 
+
+![Cats Desktop Unauthenticated](docs/features/cats-carousel-desktop-u.png)
+
+Authenticated users see the cat carousel as well, but if they have an active application for a cat, the application button is disabled and has a message that the user has applied for this cat already.
+
+![Cats Desktop Authenticated](docs/features/cats-carousel-desktop-a.png)
+
+Below the carousel, authenticated users can also keep track of their applications and the details of them, in the same style as other sections before. Here they can also click a button to edit or delete the applications. 
+
+![Cats Desktop Applications](docs/features/cats-applications-desktop.png)
+
+On mobile, the carousel is getting narrower and the cards move into one column again. 
+
+![Cats carousel Mobile](docs/features/cats-carousel-mobile.png)
+
+![Cats Mobile Applications](docs/features/cats-applications-mobile.png)
+
+#### CRUD
+
+The authenticated user can leverage full CRUD functionality in the UI of the Cats. 
+
+They can Create, Read, Update and Delete applications from here. 
+
+To create an application, the user can click on the big CTA button that says "Apply to adopt CAT now", which brings them to the application screen, which looks the same on all screen sizes. 
+
+![Cat Application](docs/features/cats-applications-create-mobile.png)
+
+The form is only asking for an application text to showcase the functionality, in a real-world scenario this form might ask for additional details like name, contact details, application status etc. As mentioned previously, I wanted to avoid collecting personal data as much as possible. 
+
+From the applications on the Cats Page, the user can click on Edit to update their application for a cat, which brings them to a similar form as the application form, containing their previously entered data and an "Update" button.
+
+![Cat Application Edit](docs/features/cats-applications-edit-mobile.png)
+
+From the same place, the user can click on Delete to delete their application for a cat, which brings them to a confirmation screen.
+
+![Cat Application Delete](docs/features/cats-applications-delete-mobile.png)
+
+#### User Feedback
+
+For a better user experience, the site features Bootstrap alerts for the Create, Update and Delete functionality, as well as for any account actions(login, logout, register). The latter comes with the allauth library.
+
+The success messages for the C(R)UD functionality:
+
+![Feeedback Create](docs/features/feedback-create.png)
+![Feedback Update](docs/features/feedback-edit.png)
+![Feedback Delete](docs/features/feedback-delete.png)
+
+It also shows an error message if someone tries to add a second application for the same cat:
+
+![Feedback Create Error](docs/features/feedback-create-error.png)
+
+And this is what the account messages look like:
+
+![Feedback Account](docs/features/feedback-account.png)
+
+The messages are set to appear at the top of the main tag and disappear automatically after 3000 milliseconds, leaving enough time for the user to read the messages.
+
+#### Custom Error Pages
+
+Two custom error pages were added to the project, to make it easy for the user to navigate back to the landing page after a 404 (Page not found) or 500 (Server Error) error. The pages look the same and feature a topical image of a cat, as well as a prominent yellow "Back to Home" button.
+
+![404 Page](docs/features/404.png)
 
 ### Future Features
 
