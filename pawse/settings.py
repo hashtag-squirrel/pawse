@@ -88,6 +88,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'pawse.urls'
@@ -107,14 +108,6 @@ TEMPLATES = [
         },
     },
 ]
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.request",
-)
 
 WSGI_APPLICATION = 'pawse.wsgi.application'
 
@@ -155,8 +148,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -164,12 +155,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STORAGES = {
+    "default": {"BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage"},
+    "staticfiles": {"BACKEND": "cloudinary_storage.storage.StaticHashedCloudinaryStorage"},
+}
 
 
 # Default primary key field type
