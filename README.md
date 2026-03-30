@@ -8,7 +8,7 @@ It is a remake of the HTML & CSS only website ["In the Meowment"](https://hashta
 
 This project was made from scratch, only taking the idea of the previous cat cafe website and fleshing it out from the ground up. 
 
-[Pawse Live Site](https://pawse-4504aa9c3705.herokuapp.com/)
+[Pawse Live Site](https://pawse-j092spqzk-hashtag-squirrels-projects.vercel.app/)
 
 ## Table of Contents
 
@@ -494,6 +494,8 @@ To create a virtual environment:
 All testing and validation is documented in [TESTING.md](TESTING.md)
 
 ## Deployment & Development
+
+Site is currently deployed on Vercel.
 
 ### Deployment on Heroku
 
