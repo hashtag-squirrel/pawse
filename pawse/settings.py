@@ -35,7 +35,7 @@ DEBUG = os.environ.get('DEBUG', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['pawse-4504aa9c3705.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['pawse-4504aa9c3705.herokuapp.com', '127.0.0.1', '.vercel.app']
 
 
 # Application definition
